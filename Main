@@ -1,0 +1,745 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local AutoRespawn50 = Instance.new("TextButton")
+local CoreysGUI = Instance.new("TextButton")
+local FFAbuse = Instance.new("TextButton")
+local AutoRespawnpvp = Instance.new("TextButton")
+local Split = Instance.new("TextButton")
+local FSTrain = Instance.new("TextButton")
+local NoamsPremiumGUI = Instance.new("TextButton")
+local GhoulHub = Instance.new("TextButton")
+local GoofyStack = Instance.new("TextButton")
+local CoreysNewGUI = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local AntiChatLogs = Instance.new("TextButton")
+local DeathLogs = Instance.new("TextButton")
+local RepGive = Instance.new("TextButton")
+local PoleTP = Instance.new("TextButton")
+local UltiGui = Instance.new("TextButton")
+local OpenGUI = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGUi
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Main.Position = UDim2.new(0.287632316, 0, 0.327872396, 0)
+Main.Size = UDim2.new(0, 538, 0, 283)
+Main.Visible = false
+Main.Active = true
+Main.Draggable = true
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Size = UDim2.new(0, 538, 0, 50)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "Goofy Gui -Aleno"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+AutoRespawn50.Name = "Auto Respawn 50%"
+AutoRespawn50.Parent = Main
+AutoRespawn50.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoRespawn50.Position = UDim2.new(0.0144927539, 0, 0.197278917, 0)
+AutoRespawn50.Size = UDim2.new(0, 150, 0, 32)
+AutoRespawn50.Font = Enum.Font.SciFi
+AutoRespawn50.Text = "Auto Respawn 50%"
+AutoRespawn50.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoRespawn50.TextSize = 14.000
+AutoRespawn50.MouseButton1Down:connect (function()
+	local RunService = game:GetService("RunService")
+	RunService.Heartbeat:Connect(function(a)
+		if a then
+			wait()
+			local SavePosition = Instance.new("TextLabel")
+			player = game.Players.LocalPlayer.Character.Humanoid
+			player.HealthChanged:Connect(function(hp)
+				if hp <= player.MaxHealth * 0.50 then
+					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+					lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+					lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+					lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+					SavePosition.Text = "Last Place: " ..lastlocationx.. "," ..lastlocationy.. "," ..lastlocationz
+					game.Players.LocalPlayer.Character:Destroy()
+					wait(1.8)
+					repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+					local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+					game.Lighting.Blur.Enabled = false
+					game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+					game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+					game.Players.LocalPlayer.Character.ForceField:Destroy()
+					game.Players.LocalPlayer.Character.ForceField:remove()
+					wait(.01)
+				end
+			end)
+		end
+	end)
+end)
+
+CoreysGUI.Name = "CoreysGUI"
+CoreysGUI.Parent = Main
+CoreysGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CoreysGUI.Position = UDim2.new(0.326086968, 0, 0.197278917, 0)
+CoreysGUI.Size = UDim2.new(0, 150, 0, 32)
+CoreysGUI.Font = Enum.Font.SciFi
+CoreysGUI.Text = "CoreysGUI"
+CoreysGUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+CoreysGUI.TextSize = 14.000
+CoreysGUI.MouseButton1Down:connect(function()
+	local a=Instance.new("ScreenGui")local b=Instance.new("Frame")local c=Instance.new("TextLabel")local d=Instance.new("TextButton")local e=Instance.new("TextButton")local f=Instance.new("TextButton")local g=Instance.new("TextButton")local h=Instance.new("TextButton")local i=Instance.new("TextButton")local j=Instance.new("TextButton")local k=Instance.new("TextButton")local l=Instance.new("TextButton")local m=Instance.new("TextButton")local n=Instance.new("TextButton")local o=Instance.new("TextButton")local p=Instance.new("TextButton")local q=Instance.new("TextButton")local r=Instance.new("TextButton")local s=Instance.new("TextButton")local t=Instance.new("TextButton")local u=Instance.new("Frame")local v=Instance.new("TextButton")local w=Instance.new("Frame")local x=Instance.new("TextButton")local y=Instance.new("TextButton")local z=Instance.new("TextButton")local A=Instance.new("TextButton")local B=Instance.new("TextButton")local C=Instance.new("TextButton")local D=Instance.new("TextButton")local E=Instance.new("Frame")local F=Instance.new("TextButton")local G=Instance.new("TextButton")local H=Instance.new("TextButton")local I=Instance.new("TextButton")local J=Instance.new("TextButton")local K=Instance.new("TextButton")local L=Instance.new("TextButton")local M=Instance.new("TextButton")local N=Instance.new("TextButton")local O=Instance.new("TextButton")local P=Instance.new("TextLabel")a.Parent=game.CoreGui;b.Name="main"b.Parent=a;b.BackgroundColor3=Color3.fromRGB(0,0,0)b.ClipsDescendants=true;b.Position=UDim2.new(0.110549189,0,0.063671872,0)b.Size=UDim2.new(0,610,0,277)b.Visible=false;b.Active=true;b.Draggable=true;c.Name="Label"c.Parent=b;c.BackgroundColor3=Color3.fromRGB(0, 0, 0)c.Position=UDim2.new(-0.0327868834,0,0,0)c.Size=UDim2.new(0,650,0,31)c.Font=Enum.Font.Sarpanch;c.Text="Corey's Gui"c.TextColor3=Color3.fromRGB(255,255,255)c.TextSize=23.000;d.Name="button2"d.Parent=b;d.BackgroundColor3=Color3.fromRGB(0,0,0)d.Position=UDim2.new(0.0284421816,0,0.175163895,0)d.Size=UDim2.new(0,115,0,32)d.Font=Enum.Font.Sarpanch;d.Text="AutoAttack On"d.TextColor3=Color3.fromRGB(0,255,0)d.TextSize=20.000;d.MouseButton1Down:connect(function()_G.on=1;while _G.on==1 do local Q={[1]="Skill_BulletPunch",[2]="Left",[3]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_BulletPunch",[2]="Right",[3]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_SpherePunch",[2]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_Punch",[2]="Right"}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)wait()end end)e.Name="button3"e.Parent=b;e.BackgroundColor3=Color3.fromRGB(0,0,0)e.Position=UDim2.new(0.542340159,0,0.566636264,0)e.Size=UDim2.new(0,115,0,32)e.Font=Enum.Font.Sarpanch;e.Text="God (ghost rider)"e.TextColor3=Color3.fromRGB(255,255,255)e.TextSize=17.000;e.MouseButton1Down:connect(function()stopQuest=true;function NoKill()local R=game:GetService'Players'.LocalPlayer.Character;local S=getrawmetatable(game)local T=S.__index;local U=S.__namecall;setreadonly(S,false)S.__namecall=newcclosure(function(V,...)local W={...}local X=getnamecallmethod()if not checkcaller()and V==R and X=="BreakJoints"then return nil end;return U(V,...)end)setreadonly(S,true)end;function fixCam()local Y=workspace.CurrentCamera;Y.CameraSubject=game.Players['LocalPlayer'].Character.Humanoid;Y.CameraType=Enum.CameraType.Custom end;function SetSpeed(Z)local _=assert(tonumber(Z),'Must be a number')game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed=tonumber(Z)end;function CanAttack()local a0=game:GetService("Players").LocalPlayer.PlayerScripts.MainScript;while stopQuest do wait(0.01)getsenv(a0).TalkingOnQuest=false end end;NoKill()fixCam()CanAttack()end)f.Name="button4"f.Parent=b;f.BackgroundColor3=Color3.fromRGB(0,0,0)f.Position=UDim2.new(0.280066818,0,0.387653321,0)f.Size=UDim2.new(0,115,0,32)f.Font=Enum.Font.Sarpanch;f.Text="Disable LR"f.TextColor3=Color3.fromRGB(255,0,0)f.TextSize=20.000;f.MouseButton1Down:connect(function()_G.on=0;while _G.on==1 do local W={[1]={[1]="Respawn"}}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(W))wait(2)end end)g.Name="button5"g.Parent=b;g.BackgroundColor3=Color3.fromRGB(0,0,0)g.Position=UDim2.new(0.280196846,0,0.175682679,0)g.Size=UDim2.new(0,115,0,32)g.Font=Enum.Font.Sarpanch;g.Text="Enable LR"g.TextColor3=Color3.fromRGB(0,255,0)g.TextSize=18.000;g.MouseButton1Down:connect(function()_G.on=1;while _G.on==1 do local W={[1]={[1]="Respawn"}}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(W))wait(2)end end)h.Name="button6"h.Parent=b;h.BackgroundColor3=Color3.fromRGB(0,0,0)h.Position=UDim2.new(0.0285735056,0,0.388127029,0)h.Size=UDim2.new(0,115,0,32)h.Font=Enum.Font.Sarpanch;h.Text="AutoAttack Off"h.TextColor3=Color3.fromRGB(255,0,0)h.TextSize=20.000;h.MouseButton1Down:connect(function()_G.on=0;while _G.on==1 do local Q={[1]="Skill_BulletPunch",[2]="Left",[3]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_BulletPunch",[2]="Right",[3]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_SpherePunch",[2]=Vector3.new(game.Players.LocalPlayer.Character.LowerTorso.Position)}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)local Q={[1]="Skill_Punch",[2]="Right"}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(Q)wait()end end)i.Name="button7"i.Parent=b;i.BackgroundColor3=Color3.fromRGB(0,0,0)i.Position=UDim2.new(0.027366668,0,0.571714401,0)i.Size=UDim2.new(0,115,0,32)i.Font=Enum.Font.Sarpanch;i.Text="Remove name"i.TextColor3=Color3.fromRGB(255,255,255)i.TextSize=18.000;i.MouseButton1Down:connect(function()for a1,a2 in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a2.Name=="NameBbGui"then a2:Destroy()end end;for a1,a2 in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a2.Name=="RankBbGui"then a2:Destroy()end end end)j.Name="button9"j.Parent=b;j.BackgroundColor3=Color3.fromRGB(0,0,0)j.Position=UDim2.new(0.0278160498,0,0.792244732,0)j.Size=UDim2.new(0,115,0,32)j.Font=Enum.Font.Sarpanch;j.Text="NO REP TAKING"j.TextColor3=Color3.fromRGB(255,255,255)j.TextSize=18.000;j.MouseButton1Down:connect(function()game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt:Destroy()end)k.Name="button8"k.Parent=b;k.BackgroundColor3=Color3.fromRGB(0,0,0)k.Position=UDim2.new(0.541089714,0,0.792244732,0)k.Size=UDim2.new(0,115,0,32)k.Font=Enum.Font.Sarpanch;k.Text="Teleports"k.TextColor3=Color3.fromRGB(255,255,255)k.TextSize=18.000;k.MouseButton1Down:connect(function()E.Visible=true end)l.Name="button123"l.Parent=b;l.BackgroundColor3=Color3.fromRGB(0,0,0)l.Position=UDim2.new(0.785226107,0,0.568417966,0)l.Size=UDim2.new(0,115,0,32)l.Font=Enum.Font.Sarpanch;l.Text="Rejoin"l.TextColor3=Color3.fromRGB(255,255,255)l.TextSize=18.000;l.MouseButton1Down:connect(function()game:GetService("TeleportService"):Teleport(game.PlaceId,player)end)m.Name="button11"m.Parent=b;m.BackgroundColor3=Color3.fromRGB(0,0,0)m.Position=UDim2.new(0.278668702,0,0.792244732,0)m.Size=UDim2.new(0,115,0,32)m.Font=Enum.Font.Sarpanch;m.Text="Remove shield"m.TextColor3=Color3.fromRGB(255,255,255)m.TextSize=18.000;m.MouseButton1Down:connect(function()_G.Toggle=true;while _G.Toggle do wait()for a1,a2 in pairs(game.Players.LocalPlayer.Character:GetDescendants())do if a2.Name=="ForceField"then a2:Destroy()end end end end)n.Name="button54"n.Parent=b;n.BackgroundColor3=Color3.fromRGB(0,0,0)n.Position=UDim2.new(0.542603135,0,0.174916208,0)n.Size=UDim2.new(0,115,0,32)n.Font=Enum.Font.Sarpanch;n.Text="Psychic all ON"n.TextColor3=Color3.fromRGB(0,255,0)n.TextSize=18.000;n.MouseButton1Down:connect(function()_G.on=1;while _G.on==1 do for a1,a2 in pairs(game.Players:GetPlayers())do pcall(function()game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[a2.Name]})game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})end)wait()end end end)o.Name="button512"o.Parent=b;o.BackgroundColor3=Color3.fromRGB(0,0,0)o.Position=UDim2.new(0.542603135,0,0.387912601,0)o.Size=UDim2.new(0,115,0,32)o.Font=Enum.Font.Sarpanch;o.Text="Psychic all OFF"o.TextColor3=Color3.fromRGB(255,0,0)o.TextSize=18.000;o.MouseButton1Down:connect(function()_G.on=0;while _G.on==1 do for a1,a2 in pairs(game.Players:GetPlayers())do pcall(function()game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[a2.Name]})game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})end)wait()end end end)p.Name="button6456"p.Parent=b;p.BackgroundColor3=Color3.fromRGB(0,0,0)p.Position=UDim2.new(0.278993785,0,0.571714401,0)p.Size=UDim2.new(0,115,0,32)p.Font=Enum.Font.Sarpanch;p.Text="B.H"p.TextColor3=Color3.fromRGB(255,255,255)p.TextSize=18.000;p.MouseButton1Down:connect(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/black-hub/main/fuck%20you"))()end)q.Name="button411"q.Parent=b;q.BackgroundColor3=Color3.fromRGB(0,0,0)q.Position=UDim2.new(0.786624193,0,0.387653321,0)q.Size=UDim2.new(0,115,0,32)q.Font=Enum.Font.Sarpanch;q.Text="FS training OFF"q.TextColor3=Color3.fromRGB(255,0,0)q.TextSize=15.000;q.MouseButton1Down:connect(function()_G.on=0;while _G.on==1 do plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-369,15735,-9)local W={[1]={[1]="+FS6"}}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(W))wait()end end)r.Name="button54"r.Parent=b;r.BackgroundColor3=Color3.fromRGB(0,0,0)r.Position=UDim2.new(0.785226107,0,0.174916208,0)r.Size=UDim2.new(0,115,0,32)r.Font=Enum.Font.Sarpanch;r.Text="FS training ON"r.TextColor3=Color3.fromRGB(0,255,0)r.TextSize=18.000;r.MouseButton1Down:connect(function()_G.on=1;while _G.on==1 do plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-369,15735,-9)local W={[1]={[1]="+FS6"}}game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(W))wait()end end)s.Name="button1212"s.Parent=b;s.BackgroundColor3=Color3.fromRGB(0,0,0)s.Position=UDim2.new(0.786991358,0,0.792244732,0)s.Size=UDim2.new(0,115,0,32)s.Font=Enum.Font.Sarpanch;s.Text="Ready Scripts"s.TextColor3=Color3.fromRGB(255,255,255)s.TextSize=18.000;s.MouseButton1Down:connect(function()w.Visible=true end)t.Name="close"t.Parent=b;t.BackgroundColor3=Color3.fromRGB(0,0,0)t.Position=UDim2.new(0.968481243,0,0,0)t.Size=UDim2.new(0,19,0,14)t.Font=Enum.Font.SourceSans;t.Text="x"t.TextColor3=Color3.fromRGB(255,255,255)t.TextSize=14.000;t.MouseButton1Down:connect(function()b.Visible=false end)u.Name="openmain"u.Parent=a;u.BackgroundColor3=Color3.fromRGB(255,255,255)u.Position=UDim2.new(0,0,0.326171875,0)u.Size=UDim2.new(0,86,0,23)v.Name="open1"v.Parent=u;v.BackgroundColor3=Color3.fromRGB(0,0,0)v.Position=UDim2.new(0,0,0.00135863945,0)v.Size=UDim2.new(0,86,0,23)v.Font=Enum.Font.Sarpanch;v.Text="OPEN"v.TextColor3=Color3.fromRGB(255,255,255)v.TextSize=20.000;v.MouseButton1Down:connect(function()b.Visible=true end)w.Name="readyscripts"w.Parent=a;w.BackgroundColor3=Color3.fromRGB(0,0,0)w.Position=UDim2.new(0.17667447,0,0.682812512,0)w.Size=UDim2.new(0,525,0,97)w.Visible=false;w.Active=true;w.Draggable=true;x.Name="TextButton199"x.Parent=w;x.BackgroundColor3=Color3.fromRGB(0,0,0)x.Position=UDim2.new(0.0383258499,0,0.122448981,0)x.Size=UDim2.new(0,138,0,34)x.Font=Enum.Font.SourceSans;x.Text="Infinite Yield"x.TextColor3=Color3.fromRGB(0,0,212)x.TextSize=20.000;x.MouseButton1Down:connect(function()loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()end)y.Name="TextButton12221"y.Parent=w;y.BackgroundColor3=Color3.fromRGB(0,0,0)y.Position=UDim2.new(0.0383258499,0,0.551020384,0)y.Size=UDim2.new(0,138,0,34)y.Font=Enum.Font.SourceSans;y.Text="CMD -X"y.TextColor3=Color3.fromRGB(0,13,207)y.TextSize=20.000;y.MouseButton1Down:connect(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()end)z.Name="TextButton555"z.Parent=w;z.BackgroundColor3=Color3.fromRGB(0,0,0)z.Position=UDim2.new(0.372286022,0,0.122448981,0)z.Size=UDim2.new(0,138,0,34)z.Font=Enum.Font.SourceSans;z.Text="Multi Checker"z.TextColor3=Color3.fromRGB(0,10,216)z.TextSize=20.000;z.MouseButton1Down:connect(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/multichecker/main/fasty%20script"))()end)A.Name="TextButton222"A.Parent=w;A.BackgroundColor3=Color3.fromRGB(0,0,0)A.Position=UDim2.new(0.372286022,0,0.551020384,0)A.Size=UDim2.new(0,138,0,34)A.Font=Enum.Font.SourceSans;A.Text="Anti AFK"A.TextColor3=Color3.fromRGB(16,19,220)A.TextSize=20.000;A.MouseButton1Down:connect(function()script=loadstring(game:HttpGet("https://pastebin.com/raw/XXPTpkcZ",true))()end)B.Name="TextButton151"B.Parent=w;B.BackgroundColor3=Color3.fromRGB(0,0,0)B.Position=UDim2.new(0.697552323,0,0.122448951,0)B.Size=UDim2.new(0,138,0,34)B.Font=Enum.Font.SourceSans;B.Text="Animation GUI"B.TextColor3=Color3.fromRGB(16,1,226)B.TextSize=20.000;B.MouseButton1Down:connect(function()loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()end)C.Name="TextButton151"C.Parent=w;C.BackgroundColor3=Color3.fromRGB(0,0,0)C.Position=UDim2.new(0.69800806,0,0.551020384,0)C.Size=UDim2.new(0,138,0,34)C.Font=Enum.Font.SourceSans;C.Text="Fuck you Hub"C.TextColor3=Color3.fromRGB(8,19,225)C.TextSize=20.000;C.MouseButton1Down:connect(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/FastyGame31/fuck-you/main/hub"))()end)D.Name="close2"D.Parent=w;D.BackgroundColor3=Color3.fromRGB(0,0,0)D.Position=UDim2.new(0.961923838,0,0,0)D.Size=UDim2.new(0,19,0,11)D.Font=Enum.Font.SourceSans;D.Text="x"D.TextColor3=Color3.fromRGB(255,255,255)D.TextSize=14.000;D.MouseButton1Down:connect(function()w.Visible=false end)E.Name="teleports"E.Parent=a;E.BackgroundColor3=Color3.fromRGB(0,0,0)E.Position=UDim2.new(0.829466343,0,0.19140625,0)E.Size=UDim2.new(0,136,0,272)E.Visible=false;E.Active=true;E.Draggable=true;F.Name="close"F.Parent=E;F.BackgroundColor3=Color3.fromRGB(0,0,0)F.Position=UDim2.new(0.858187139,0,0,0)F.Size=UDim2.new(0,19,0,14)F.Font=Enum.Font.SourceSans;F.Text="x"F.TextColor3=Color3.fromRGB(255,255,255)F.TextSize=14.000;F.MouseButton1Down:connect(function()E.Visible=false end)G.Name="Button12"G.Parent=E;G.BackgroundColor3=Color3.fromRGB(0,0,0)G.Position=UDim2.new(0.095588237,0,0.0772058815,0)G.Size=UDim2.new(0,113,0,18)G.Font=Enum.Font.SourceSans;G.Text="Spawn"G.TextColor3=Color3.fromRGB(255,85,0)G.TextSize=16.000;G.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(322,250,871)end)H.Name="Button132"H.Parent=E;H.BackgroundColor3=Color3.fromRGB(0,0,0)H.Position=UDim2.new(0.095588237,0,0.172794119,0)H.Size=UDim2.new(0,113,0,18)H.Font=Enum.Font.SourceSans;H.Text="Safe Zone"H.TextColor3=Color3.fromRGB(255,85,0)H.TextSize=16.000;H.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(399,249,871)end)I.Name="Button23"I.Parent=E;I.BackgroundColor3=Color3.fromRGB(0,0,0)I.Position=UDim2.new(0.095588237,0,0.264705896,0)I.Size=UDim2.new(0,113,0,18)I.Font=Enum.Font.SourceSans;I.Text="LeaderBoards"I.TextColor3=Color3.fromRGB(255,85,0)I.TextSize=16.000;I.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-773,249,746)end)J.Name="Button15"J.Parent=E;J.BackgroundColor3=Color3.fromRGB(0,0,0)J.Position=UDim2.new(0.095588237,0,0.356617659,0)J.Size=UDim2.new(0,113,0,18)J.Font=Enum.Font.SourceSans;J.Text="Far From Map"J.TextColor3=Color3.fromRGB(255,85,0)J.TextSize=16.000;J.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-1846,106410,46)end)K.Name="Button92"K.Parent=E;K.BackgroundColor3=Color3.fromRGB(0,0,0)K.Position=UDim2.new(0.095588237,0,0.459558845,0)K.Size=UDim2.new(0,113,0,18)K.Font=Enum.Font.SourceSans;K.Text="Top of island"K.TextColor3=Color3.fromRGB(255,85,0)K.TextSize=16.000;K.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-2631,5548,-505)end)L.Name="Button6"L.Parent=E;L.BackgroundColor3=Color3.fromRGB(0,0,0)L.Position=UDim2.new(0.095588237,0,0.555147052,0)L.Size=UDim2.new(0,113,0,18)L.Font=Enum.Font.SourceSans;L.Text="Best cbring place"L.TextColor3=Color3.fromRGB(255,85,0)L.TextSize=16.000;L.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(1063,523,151)end)M.Name="Button5"M.Parent=E;M.BackgroundColor3=Color3.fromRGB(0,0,0)M.Position=UDim2.new(0.095588237,0,0.647058845,0)M.Size=UDim2.new(0,113,0,18)M.Font=Enum.Font.SourceSans;M.Text="FS 10T"M.TextColor3=Color3.fromRGB(255,85,0)M.TextSize=16.000;M.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-361,15734,-3)end)N.Name="Button7"N.Parent=E;N.BackgroundColor3=Color3.fromRGB(0,0,0)N.Position=UDim2.new(0.095588237,0,0.738970578,0)N.Size=UDim2.new(0,113,0,18)N.Font=Enum.Font.SourceSans;N.Text="BT 10T"N.TextColor3=Color3.fromRGB(255,85,0)N.TextSize=16.000;N.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-271,281,1001)end)O.Name="Button123"O.Parent=E;O.BackgroundColor3=Color3.fromRGB(0,0,0)O.Position=UDim2.new(0.095588237,0,0.83088237,0)O.Size=UDim2.new(0,113,0,19)O.Font=Enum.Font.SourceSans;O.Text="PP 1Qa"O.TextColor3=Color3.fromRGB(255,85,0)O.TextSize=16.000;O.MouseButton1Down:connect(function()plr=game.Players.LocalPlayer;hum=plr.Character.HumanoidRootPart;hum.CFrame=CFrame.new(-2557,5416,-498)end)P.Parent=E;P.BackgroundColor3=Color3.fromRGB(0,0,0)P.Position=UDim2.new(-0.00262814015,0,0.000919129932,0)P.Size=UDim2.new(0,115,0,15)P.Font=Enum.Font.SourceSans;P.Text="Teleports"P.TextColor3=Color3.fromRGB(255,85,0)P.TextSize=14.000
+end)
+
+FFAbuse.Name = "FF Abuse"
+FFAbuse.Parent = Main
+FFAbuse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FFAbuse.Position = UDim2.new(0.641304314, 0, 0.197278917, 0)
+FFAbuse.Size = UDim2.new(0, 150, 0, 32)
+FFAbuse.Font = Enum.Font.SciFi
+FFAbuse.Text = "FF Abuse"
+FFAbuse.TextColor3 = Color3.fromRGB(0, 0, 0)
+FFAbuse.TextSize = 14.000
+FFAbuse.MouseButton1Down:connect(function()
+	--[[ Jaggos ff abuse
+]]
+	while true do
+		wait(3) -- slow wait till you can hit 
+		if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+			for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v.Name == "ForceField" then
+					v:Destroy()
+
+				end
+			end
+		end
+		spawn(function()
+			wait(2)
+			game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+			game.Lighting.Blur.Enabled = false
+			game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+			game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+		end)
+		spawn(function()
+			wait(0.4)
+			for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v.Name == "RightHand" then
+					v:Destroy()
+				end
+			end
+		end)
+	end
+end)
+
+AutoRespawnpvp.Name = "Auto Respawn (pvp)"
+AutoRespawnpvp.Parent = Main
+AutoRespawnpvp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoRespawnpvp.Position = UDim2.new(0.0144927539, 0, 0.360544205, 0)
+AutoRespawnpvp.Size = UDim2.new(0, 150, 0, 32)
+AutoRespawnpvp.Font = Enum.Font.SciFi
+AutoRespawnpvp.Text = "Auto Respawn 30% "
+AutoRespawnpvp.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoRespawnpvp.TextSize = 14.000
+AutoRespawnpvp.MouseButton1Down:connect(function()
+	local RunService = game:GetService("RunService")
+	RunService.Heartbeat:Connect(function(a)
+		if a then
+			wait()
+			local SavePosition = Instance.new("TextLabel")
+			player = game.Players.LocalPlayer.Character.Humanoid
+			player.HealthChanged:Connect(function(hp)
+				if hp <= player.MaxHealth * 0.30 then
+					game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+					lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+					lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+					lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+					SavePosition.Text = "Last Place: " ..lastlocationx.. "," ..lastlocationy.. "," ..lastlocationz
+					game.Players.LocalPlayer.Character:Destroy()
+					wait(1.8)
+					repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+					local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+					game.Lighting.Blur.Enabled = false
+					game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+					game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+					game.Players.LocalPlayer.Character.ForceField:Destroy()
+					game.Players.LocalPlayer.Character.ForceField:remove()
+					wait(.01)
+				end
+			end)
+		end
+	end)
+end)
+
+Split.Name = "Split"
+Split.Parent = Main
+Split.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Split.Position = UDim2.new(0.0144927502, 0, 0.53061223, 0)
+Split.Size = UDim2.new(0, 150, 0, 32)
+Split.Font = Enum.Font.SciFi
+Split.Text = "Split"
+Split.TextColor3 = Color3.fromRGB(0, 0, 0)
+Split.TextSize = 14.000
+Split.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
+end)
+
+FSTrain.Name = "FS Train"
+FSTrain.Parent = Main
+FSTrain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FSTrain.Position = UDim2.new(0.32490167, 0, 0.53061223, 0)
+FSTrain.Size = UDim2.new(0, 150, 0, 32)
+FSTrain.Font = Enum.Font.SciFi
+FSTrain.Text = "FS Train"
+FSTrain.TextColor3 = Color3.fromRGB(0, 0, 0)
+FSTrain.TextSize = 14.000
+FSTrain.MouseButton1Down:connect(function()
+	if game.PlaceId ~= 2202352383 then 
+		return
+	end
+
+	while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
+		not game:GetService("Players").LocalPlayer.PlayerGui do
+		wait()
+	end
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Auto fist trainer. (Click f4)";
+		Text = "Made by Jag. If there are any issues dm stuff#0024";
+	})
+
+	local input = game:GetService("UserInputService")
+	input.InputBegan:connect(function(inst)
+		if inst.KeyCode == Enum.KeyCode.F4 then
+			wait()
+
+			_G.on = 1
+			while _G.on == 1
+			do
+				local args = {
+					[1] = {
+						[1] = "+FS6"
+					}
+				}
+				wait(0)
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				wait(1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+				plr = game.Players.LocalPlayer
+				hum = plr.Character.HumanoidRootPart
+				wait(0.5)
+				game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-266,281,1001) * CFrame.Angles(0,math.rad(269),0))
+				wait(1)
+				game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+
+				wait(.5)
+
+				hum.CFrame = CFrame.new(-367,15735,-11)
+			end
+		end
+	end)
+	spawn(function()
+		local input = game:GetService("UserInputService")
+		input.InputBegan:connect(function(inst)
+			if inst.KeyCode == Enum.KeyCode.F4 then
+				wait(4)
+				_G.on = true
+				while _G.on == true do
+					wait(0.1)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+					local args = {
+						[1] = {
+							[1] = "+FS6"
+						}
+					}
+					wait(0)
+					game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				end
+			end
+		end)
+	end)
+end)
+
+NoamsPremiumGUI.Name = "Noam's Premium GUI"
+NoamsPremiumGUI.Parent = Main
+NoamsPremiumGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoamsPremiumGUI.Position = UDim2.new(0.640886784, 0, 0.357467383, 0)
+NoamsPremiumGUI.Size = UDim2.new(0, 150, 0, 32)
+NoamsPremiumGUI.Font = Enum.Font.SciFi
+NoamsPremiumGUI.Text = "Noam's Premium GUI"
+NoamsPremiumGUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoamsPremiumGUI.TextSize = 14.000
+NoamsPremiumGUI.MouseButton1Down:connect(function()
+	_, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
+
+
+	,nil,nil;(function() _msec=(function(l,e,o)local R=e[(205-(426-0x10c))];local I=o[l[(1428-0x2fb)]][l[(0x62a-840)]];local c=(-0x3f+67)/(0x36-(-0x1c+(8720/0x6d)))local x=(((4397328/0xae)/216)-115)-(0x19/25)local p=o[l[(-0x26+213)]][l[(-0x6d+350)]];local N=(137/(0xfc+(-15410/0x86)))+(116-0x72)local L=o[l[(635+-0x2a)]][l[(0x71c-971)]]local a=(0x50-78)-((0x8f-(249-0x9b))-0x30)local U=(89+(17+(((-0x7f+-38734)+19413)/0xbb)))local b=(284/(-0x49+((0x1d5+-21)-0xe9)))local _=(76-(0x7b+(0xa-(0x72+-55))))local i=((((5485109/0x9d)-17513)/72)/121)local C=((0xcf+((-237+0x59)+0x20))-89)local M=((((-0x2873+-110)/115)+175)/42)local G=(50+((-0x1175ba/(0x8043/(0x94e3/231)))/0x7d))local B=((214-(-88+(-122+0x179)))-43)local g=(((210289/(0x1eb-268))-495)/112)local A=((-0x6e+(0x15f-(0xb3ba/214)))-22)local s=(0x44/(0x5b-(0x3296/((0xb4e7-23211)/0x84))))local j=(-0x30+(0x7b8/(0x7a-(0xe4-(-0x34+196)))))local h=((0x27+((-78+-0x17)+0x2a))+23)local k=(0x2f+(-127+(16019/(-0x64+293))))local t=(0x73+((-0x79920/(125+-0x6a))/234))local w=(0x6b-(322-(23326/(4922/0x2e))))local u=(-0x47+(((-0x4d+-27)+14090)/0xbd))local O=(0x56+(-80+(0x41-(257-0xbd))))local J=l[((-49+0xb3c)-0x5c2)];local V=o[l[(0x1d65/43)]][l[(517+-0x54)]];local Q=o[(function(e)return type(e):sub(1,1)..'\101\116'end)('!_%&&%&%')..'\109\101'..('\116\97'or'}+!#/=*;')..l[(92508/0x9c)]];local f=o[l[(-109+0x2be)]][l[(0x24573/149)]];local v=(262/0x83)-((0xe1-(-88+0xe5))/42)local S=(((1698-0x37b)-0x1bb)/182)-(0x180/192)local K=o[l[(442-0x10b)]][l[(0x1f1+-119)]];local e=function(e,l)return e..l end local m=(0x85-129)*(((0x4d268/(0x1eba/138))/42)-128)local Y=o[l[(1236+-0x32)]];local r=(51+-0x31)*(329-(33768/(0x11a+-114)))local y=(0x440+-64)*(((0xa5ac8/117)/0x3a)+-98)local W=(-0x37+(25894/((-0x50-15)+0x151)))local D=(((0x29310/240)-365)/0xa9)*(108-0x6a)local P=o[l[(0x2a5fd/171)]]or o[l[(0x4b4-611)]][l[(0x2a5fd/171)]];local n=(-83+(783-(0x5340/48)))local l=o[l[(0x529+-76)]];local L=(function(n)local r,o=1,0x10 local l={j={},v={}}local d=-a local e=o+x while true do l[n:sub(e,(function()e=r+e return e-x end)())]=(function()d=d+a return d end)()if d==(m-a)then d=""o=v break end end local d=#n while e<d+x do l.v[o]=n:sub(e,(function()e=r+e return e-x end)())o=o+a if o%c==v then o=S f(l.j,(K((l[l.v[S]]*m)+l[l.v[a]])))end end return L(l.j)end)("..:::MoonSec::..!*%&/+^,;.:_#$}=$$,#*,_/+*=!;#%;#+^%==.#&.$^,&*!:$/:},;_%*_}+_=;#/&%#=^#!::^/&}!,$*:_,+/=*;}%_#;^+!%.=&#$.,^*&_!/$}:;,%/#*+}=_._&+$%^=!#:./^}&;!*$_:+,=/.*%}#_^;!+:/&=$#,.*^_&+!}$;:%;#/^*=}.$&;$+,%*&:#/.}^;&%!_$+:=,}&&^#}^_!;*+:+/!};;+$++&=!;$&#!$^/!&.}&#$;,+*%#*.%}.;.%&#*+$=:.,/^}#^}!=:;/,}%,=*#_=;&=&.+%$#:^,!+:*/%$_,;+%_%/=}#;_%^#&^!=$$,&,$/,*!}:_/;}+;%+#_#+.=^.^&!#$^:!,}*/*$},_*._++%}=;#^+#^^,!!.=&:$;,/*,}!/_};;+%}_=+$=..,&&$/,&!::,//}$,}*#_;+.=;;=%##.;*!&:*&$}!_,*/_*/}!^;;%^#%^!=#.$&#$&,!!$#+/,}+;*%/}$+;=^.%/!##^:!^:&/!}*;!*,_/+*==;_%.#+^^!+.#&.$^;}*!:}/:},#%%*#%+_=:.+&+#=^#/,:^/;}!;!*:_.+/=,#!%_##^+*;.=&$$.,_*&_/+&}:;,%/$,+}=#.;&.$;^=!#:.^*}&;**$_:.+=/.+%}#$^;!;:%&=*:,.*__&+&}$;#%,#::*=}.=&;=!,%*!:#/}}^;,%^_$+:=,:=&*#=^_!#:_/%$=,#&+_^+/=!;$/,#,^;!*.}&_$;,+*%#;/#}$;^%/#!+$=:.,/:$*,%!_::/+}%,=*#}}+^=&.!%}#:^,!/:/&}$_,;*+_:/=}#;.},#^^!=$.:::/.$&;&:=/;}+;%;*&+#$+_%=&!#$^:!,://*#}_:;$#*+%}=;#,%&+_.,**&;+&:$.+.!!#/&,;;%^_=+#=.=.._&*$==%:,//}*,}*__;#+&%_;&%#.^^!&*&_*/#}!;%*;.$}_;;%+#%;*=#..&^}+;_!$:$/,};;**}__+;&^.%&%##^#!^://!}&;/*,_,+*=&;_%.#+^&==:!&=$^,&*!_%/:};;/%+#/+_=;.+&:#=^$!._;+}}!;!*:__+/=*;}%_!.^+!+.=&=$.,,*&_!^&}:;:%/#&+}=_.;/,*;^=!=:./.}&;!*$##;+=/.+%}$&^;!+:%+*$#,.*__&+&}$;:%,#/^*=}:*&;$+,%!=:#+_}^;&%,_$+$=,./&*$%^_!;::/%=$,#*:_^+&&,;$&&#,^;!*.}&_}::^*%_./#=!;^%&#!,$=:.,&}$*,;!_:$/+!%,=*##/+^=&.!%}#:^,!/:*/_$_;!*+_%/=}#;.%^$*^!!+.:&,$/,*!}:_+&}+.!*=_}+.*^.&&!$;^:*%://&$},_*;_++$}=;}%.#;^&!!.$&:}%,/*#:}/}};:+%%_=^,=.:*&&$^^$!::,//}_,}*$_;+,=%;=%##.^:!&:.&$}/,,*/_*/}=/;;%;#%^*=#_.&^$&,&!$_&/,}:;*%%#}+;=:.%&$##^:!^_++_$$,=*,_;+*}};_%;=.^%!/.#&:$^,,*!:$^!},;;%*#!+_=;.+&%!/^#!.:^//}!,$*:#!+/=*;}#^$$^+!%.=:!/%}.,^*=_=/}_+;_%;;$^%}.,:*::*;*!&_}&;}_.%_}+,=/.*.+%#$+^:*,/,$#,.*^==:,+&=/^=*&#&^$+#&=$+,%!==/_$+:=&^,%%#}.%}+&*#}^_,!*._^/=}=+&}+;%^%}}:*=+#_^:*%:&/$$,;,%%_*+_}..%%}$*+=!+:;==$*,:*+,/+!}},$%^;;%&#*^/=._:,;*&:,/.$=,$%,_**_=^;,%##}%#}$:_/^$:,#*%_!+:}/;=%}_}^&=#:+&:$*,#!$^=/:=!,..#+}}=;#%.!=$%+^!}_!%%$,,^=^.$^*$/.,#!+#=..^.%.*,,!::,///$}$,#*##;^^!*.+&,#$#/::&$$:,,,&*!#*+!}_.:&/#/^*!:/_$&,!!$:#,}}/;**}__+;=+.%/*$.^.!^:&/.$$,:*,_/+*}};_%;#+^%==.#&.$^,&**:$/:},;/%*$!+_=;.^&%$+^#!.:^++}!,$*__,+_=*;}%_}}^+!%:!&#}%,^*/_!/}}:;_%:#*+}=_:*&+$&^=*!:=/^}&;!%,_:+;=/.*^&#_^;!+:&&=$#,.*;}:+!}};:%;#/^*=}:$&#$+,&!=:=/.}^;&&%_$+:=;./&.#}^_!;_,/%$=,}*._;+&=!;$/:#,^/!&.}&$$;,.*%#*/#}.;:%&#++$=:.,&/$*^}*!:;/^}%,=*#_.+^=&.%%$#=^,!/:*&}$_,;*^_%/=}#;_%^#&^!=$._&,$+,*!=:_/;}+;%*=_#+:=^.&&!");local f=((0x90fa/241)+-0x37)local d=35 local o=a;local l={}l={[(255/0xff)]=function()local e,l,a,x=p(L,o,o+N);o=o+D;d=(d+(f*D))%n;return(((x+d-(f)+r*(D*c))%r)*((c*y)^c))+(((a+d-(f*c)+r*(c^N))%n)*(r*n))+(((l+d-(f*N)+y)%n)*r)+((e+d-(f*D)+y)%n);end,[(123-0x79)]=function(e,e,e)local e=p(L,o,o);o=o+x;d=(d+(f))%n;return((e+d-(f)+y)%r);end,[(0x17a/126)]=function()local e,l=p(L,o,o+c);d=(d+(f*c))%n;o=o+c;return(((l+d-(f)+r*(c*D))%r)*n)+((e+d-(f*c)+n*(c^N))%r);end,[(127-0x7b)]=function(l,e,o)if o then local e=(l/c^(e-a))%c^((o-x)-(e-a)+x);return e-e%a;else local e=c^(e-x);return(l%(e+e)>=e)and a or S;end;end,[(0x40b/207)]=function()local o=l[(86+-0x55)]();local e=l[(120/0x78)]();local i=a;local d=(l[(0x2a-38)](e,x,m+D)*(c^(m*c)))+o;local o=l[(0x75-113)](e,21,31);local e=((-a)^l[(0x70-108)](e,32));if(o==S)then if(d==v)then return e*S;else o=x;i=v;end;elseif(o==(r*(c^N))-x)then return(d==S)and(e*(x/v))or(e*(S/v));end;return I(e,o-((n*(D))-a))*(i+(d/(c^W)));end,[(69-0x3f)]=function(e,c,c)local c;if(not e)then e=l[(0x23-(-0x39+91))]();if(e==S)then return'';end;end;c=V(L,o,o+e-a);o=o+e;local e=''for l=x,#c do e=J(e,K((p(V(c,l,l))+d)%n))d=(d+f)%r end return e;end}local function y(...)return{...},Y('#',...)end local function L()local i={};local d={};local e={};local w={i,d,nil,e};local o={}local U=(-25+0x45)local n={[(47-0x2f)]=(function(e)return not(#e==l[(418/0xd1)]())end),[(34-0x1e)]=(function(e)return l[(-0x25+42)]()end),[(0x1b0/144)]=(function(e)return l[(49+-0x2b)]()end),[(52/0x1a)]=(function(e)local o=l[(90-0x54)]()local l=''local e=1 for d=1,#o do e=(e+U)%n l=J(l,K((p(o:sub(d,d))+e)%r))end return l end)};w[3]=l[(0x36-52)]();for e=x,l[(0x19/25)]()do d[e-x]=L();end;local e=l[(109-0x6c)]()for d=1,e do local e=l[(103-0x65)]();local l;local e=n[e%(0x72+-76)];o[d]=e and e({});end;for n=1,l[(-90+0x5b)]()do local e=l[(0x42-64)]();if(l[(-0x5b+95)](e,a,x)==v)then local r=l[(980/(0xa591/173))](e,c,N);local d=l[(-98+0x66)](e,D,c+D);local e={l[((878-0x1ee)/0x80)](),l[(363/0x79)](),nil,nil};local w={[(107+-0x6b)]=function()e[O]=l[(62-0x3b)]();e[B]=l[(0x2ee/250)]();end,[(0x23+-34)]=function()e[k]=l[((3750/0x32)-0x4a)]();end,[(-0x78+122)]=function()e[O]=l[(54+-0x35)]()-(c^m)end,[(0x19-22)]=function()e[k]=l[(0x79+-120)]()-(c^m)e[A]=l[(30/0xa)]();end};w[r]();if(l[(121-0x75)](d,x,a)==x)then e[_]=o[e[b]]end if(l[(0x29-37)](d,c,c)==a)then e[h]=o[e[u]]end if(l[(-103+0x6b)](d,N,N)==x)then e[g]=o[e[A]]end i[n]=e;end end;return w;end;local function S(l,D,f)local d=l[c];local o=l[N];local l=l[a];return(function(...)local p=y local L=Y('#',...)-x;local n={...};local r=l;local m={};local l=o;local y={};local v=d;local o=a o*=-1 local N=o;local o={};local d=a;for e=0,L do if(e>=l)then y[e-l]=n[e+x];else o[e]=n[e+a];end;end;local l=L-l+a local l;local n;while true do l=r[d];n=l[(0x16+(-0xe31/173))];e=(6268022)while n<=(0x96c/67)do e-= e e=(228865)while(-127+0x90)>=n do e-= e e=(48840)while n<=(1352/0xa9)do e-= e e=(6447175)while(52+-0x31)>=n do e-= e e=(5448240)while(-44+0x2d)>=n do e-= e e=(3152960)while(125+-0x7d)<n do e-= e if(o[l[U]]==l[s])then d=d+x;else d=l[w];end;break end while 3340==(e)/((108560/0x73))do D[l[w]]=o[l[C]];break end;break;end while 2256==(e)/((0x134e-2527))do e=(1427011)while n>(-51+0x35)do e-= e local c=v[l[t]];local a;local e={};a=Q({},{__index=function(o,l)local e=e[l];return e[1][e[2]];end,__newindex=function(d,l,o)local e=e[l]e[1][e[2]]=o;end;});for n=1,l[j]do d=d+x;local l=r[d];if l[(0x97/151)]==61 then e[n-1]={o,l[h]};else e[n-1]={D,l[h]};end;m[#m+1]=e;end;o[l[U]]=S(c,a,f);break end while(e)/((58348/0x74))==2837 do o[l[U]]=o[l[O]]%l[s];break end;break;end break;end while 3325==(e)/((3971-0x7f0))do e=(5269170)while((-113+0xaf)-57)>=n do e-= e e=(5401682)while n>(0x2b+-39)do e-= e if(o[l[i]]==l[B])then d=d+x;else d=l[w];end;break end while(e)/((0x1b9ef/55))==2626 do local n;local c,b;local x;local e;f[l[O]]=o[l[i]];d=d+a;l=r[d];o[l[_]]=f[l[t]];d=d+a;l=r[d];o[l[_]]=f[l[w]];d=d+a;l=r[d];e=l[i];x=o[l[u]];o[e+1]=x;o[e]=x[l[j]];d=d+a;l=r[d];o[l[U]]=l[k];d=d+a;l=r[d];o[l[i]]=(l[u]~=0);d=d+a;l=r[d];e=l[i]c,b=p(o[e](P(o,e+1,l[k])))N=b+e-1 n=0;for e=e,N do n=n+a;o[e]=c[n];end;d=d+a;l=r[d];e=l[U]o[e]=o[e](P(o,e+a,N))d=d+a;l=r[d];o[l[M]]();d=d+a;l=r[d];do return end;break end;break;end while(e)/((0xb32-1456))==3737 do e=(189712)while n<=((5994/0x6f)-0x30)do e-= e d=l[t];break;end while 568==(e)/((-0x34+386))do e=(78438)while n>(0x79-114)do e-= e local e=l[b]o[e]=o[e](o[e+x])break end while(e)/((0x7f-76))==1538 do local e=l[i];local d=o[l[t]];o[e+1]=d;o[e]=d[l[G]];break end;break;end break;end break;end break;end while 1480==(e)/((131-0x62))do e=(4156978)while n<=(-54+(0x2b0e/167))do e-= e e=(3411080)while n<=(0x244/58)do e-= e e=(5596668)while n>(26+(33+-0x32))do e-= e if not o[l[i]]then d=d+x;else d=l[k];end;break end while 2019==(e)/((5652-0xb40))do local e=l[U]o[e](o[e+x])break end;break;end while 2120==(e)/((83668/0x34))do e=(1491328)while(131+-0x78)<n do e-= e o[l[U]]=o[l[t]]-o[l[j]];break end while(e)/((-39+0x61f))==976 do local e=l[_]local d,l=p(o[e](P(o,e+1,l[w])))N=l+e-1 local l=0;for e=e,N do l=l+a;o[e]=d[l];end;break end;break;end break;end while 3682==(e)/((-35+0x48c))do e=(7039487)while n<=(130+-0x74)do e-= e e=(218603)while(81+-0x44)<n do e-= e o[l[i]]=o[l[h]][l[s]];break end while(e)/((0x193-216))==1169 do f[l[h]]=o[l[M]];d=d+a;l=r[d];o[l[_]]={};d=d+a;l=r[d];o[l[C]]={};d=d+a;l=r[d];f[l[w]]=o[l[i]];d=d+a;l=r[d];o[l[M]]=f[l[u]];d=d+a;l=r[d];if(o[l[i]]==l[A])then d=d+x;else d=l[O];end;break end;break;end while 3341==(e)/((0x8224f/253))do e=(12952797)while(0x8d-126)>=n do e-= e local e={o,l};e[x][e[c][C]]=e[a][e[c][s]]+e[x][e[c][O]];break;end while 3601==(e)/((489192/0x88))do e=(315799)while(-0x6b+123)<n do e-= e local e=l[i];local d=o[l[u]];o[e+1]=d;o[e]=d[l[s]];break end while(e)/((-98+0x133))==1511 do local e=l[i]o[e]=o[e](P(o,e+a,N))break end;break;end break;end break;end break;end break;end while(e)/((-58+0x231))==455 do e=(6091204)while n<=(3796/0x92)do e-= e e=(4361819)while(0x69+-84)>=n do e-= e e=(156763)while(0x88-117)>=n do e-= e e=(624865)while(0xbd0/168)<n do e-= e local e=l[b];local a=o[e+2];local n=o[e]+a;o[e]=n;if(a>0)then if(n<=o[e+1])then d=l[w];o[e+3]=n;end elseif(n>=o[e+1])then d=l[k];o[e+3]=n;end break end while(e)/((374919/(0x167-218)))==235 do if not o[l[i]]then d=d+x;else d=l[t];end;break end;break;end while(e)/((0x3cf9e/94))==59 do e=(7209585)while n>(56-0x24)do e-= e o[l[U]]();break end while(e)/((0xf9a-2029))==3669 do o[l[_]]=#o[l[O]];break end;break;end break;end while(e)/((1585+-0x36))==2849 do e=(6992272)while(-0x27+62)>=n do e-= e e=(3826360)while((376-0xd7)-0x8b)<n do e-= e local e=l[b];local n=o[e]local a=o[e+2];if(a>0)then if(n>o[e+1])then d=l[h];else o[e+3]=n;end elseif(n<o[e+1])then d=l[h];else o[e+3]=n;end break end while 3310==(e)/((0x963-1247))do do return o[l[b]]end break end;break;end while(e)/((3428+-0x4c))==2086 do e=(2061696)while(960/0x28)>=n do e-= e o[l[U]]=S(v[l[h]],nil,f);break;end while(e)/((0x31a80/227))==2301 do e=(2759370)while n>(225/0x9)do e-= e if(o[l[_]]~=o[l[s]])then d=d+x;else d=l[O];end;break end while(e)/((0xb76-(3138-0x64e)))==1957 do o[l[U]]=(l[h]~=0);break end;break;end break;end break;end break;end while(e)/((516337/0xc5))==2324 do e=(3091200)while(142+-0x6f)>=n do e-= e e=(1133176)while n<=(0x6c-80)do e-= e e=(2316990)while n>(0xa20/96)do e-= e o[l[i]]=f[l[h]];break end while(e)/((-104+0x955))==1014 do o[l[_]]=f[l[O]];break end;break;end while 1793==(e)/((0x13c00/128))do e=(3627372)while n<=(-0x77+148)do e-= e o[l[U]]=(l[k]~=0);d=d+x;break;end while 2388==(e)/((0x66c+-125))do e=(871352)while n>(0x74-86)do e-= e local e=l[b]o[e]=o[e](o[e+x])break end while 731==(e)/((-0x63+1291))do o[l[i]]={};break end;break;end break;end break;end while(e)/((881+-0x51))==3864 do e=(3285828)while(0x84/4)>=n do e-= e e=(5332848)while n>(0xb9-153)do e-= e o[l[b]]=D[l[t]];break end while(e)/((0x870f0/200))==1928 do o[l[M]]=D[l[h]];break end;break;end while(e)/((0x5b4ac/188))==1652 do e=(286742)while n<=(0x880/64)do e-= e if(o[l[_]]==o[l[G]])then d=d+x;else d=l[h];end;break;end while(e)/((-0x71+1035))==311 do e=(2060800)while n>(164-(0x177-246))do e-= e local e=l[b]local d,l=p(o[e](P(o,e+1,l[k])))N=l+e-1 local l=0;for e=e,N do l=l+a;o[e]=d[l];end;break end while(e)/((179200/0x64))==1150 do local d=l[w];local e=o[d]for l=d+1,l[B]do e=e..o[l];end;o[l[C]]=e;break end;break;end break;end break;end break;end break;end break;end while 2627==(e)/((-0x5f+2481))do e=(1255686)while(126+-0x47)>=n do e-= e e=(1158354)while n<=(0xbc-143)do e-= e e=(7712634)while(0x7c+-84)>=n do e-= e e=(29792)while(0x5f0/40)>=n do e-= e e=(1292150)while(-0x4c+113)<n do e-= e do return o[l[M]]end break end while(e)/((1166+-0x5b))==1202 do o[l[C]]={};break end;break;end while(e)/((0x8d-113))==1064 do e=(2398990)while n>(0x2469/239)do e-= e local e=l[_];local n=o[e]local a=o[e+2];if(a>0)then if(n>o[e+1])then d=l[w];else o[e+3]=n;end elseif(n<o[e+1])then d=l[k];else o[e+3]=n;end break end while 1130==(e)/(((-0x5a+4394)-2181))do local e=l[M]o[e]=o[e](P(o,e+a,l[O]))break end;break;end break;end while 2042==(e)/((0xb86c8/200))do e=(15127112)while(0x90-102)>=n do e-= e e=(9615879)while(9471/0xe7)<n do e-= e D[l[h]]=o[l[U]];break end while(e)/((0x1d4c-3783))==2587 do o[l[b]]=(l[w]~=0);d=d+x;break end;break;end while(e)/((7667-0xf31))==4004 do e=(9445397)while n<=(0x70-69)do e-= e local e={o,l};e[x][e[c][M]]=e[a][e[c][g]]+e[x][e[c][O]];break;end while(e)/((0xaac+-31))==3497 do e=(3794252)while n>(0x1894/143)do e-= e local c=v[l[k]];local a;local e={};a=Q({},{__index=function(o,l)local e=e[l];return e[1][e[2]];end,__newindex=function(d,o,l)local e=e[o]e[1][e[2]]=l;end;});for n=1,l[g]do d=d+x;local l=r[d];if l[(0x68-103)]==61 then e[n-1]={o,l[O]};else e[n-1]={D,l[h]};end;m[#m+1]=e;end;o[l[i]]=S(c,a,f);break end while(e)/((0xafb-1453))==2794 do o[l[M]]=(l[t]~=0);break end;break;end break;end break;end break;end while(e)/((4613-0x933))==513 do e=(5848960)while(0x708/36)>=n do e-= e e=(1749800)while n<=(0x178/8)do e-= e e=(4654611)while(0xb5-135)<n do e-= e o[l[b]]=D[l[h]];d=d+a;l=r[d];o[l[b]]=#o[l[w]];d=d+a;l=r[d];D[l[u]]=o[l[U]];d=d+a;l=r[d];o[l[M]]=D[l[u]];d=d+a;l=r[d];o[l[b]]=#o[l[t]];d=d+a;l=r[d];D[l[w]]=o[l[_]];d=d+a;l=r[d];do return end;break end while 2403==(e)/((0xf9a-2057))do local x;local n;local e;o[l[C]]=l[k];d=d+a;l=r[d];o[l[U]]=l[t];d=d+a;l=r[d];o[l[i]]=#o[l[O]];d=d+a;l=r[d];o[l[b]]=l[k];d=d+a;l=r[d];e=l[i];n=o[e]x=o[e+2];if(x>0)then if(n>o[e+1])then d=l[u];else o[e+3]=n;end elseif(n<o[e+1])then d=l[k];else o[e+3]=n;end break end;break;end while 1346==(e)/((0x1a068/82))do e=(3270684)while(288/0x6)>=n do e-= e o[l[_]]=o[l[h]][o[l[g]]];break;end while(e)/((0xa89ec/242))==1146 do e=(8617826)while(139-0x5a)<n do e-= e if(o[l[U]]~=o[l[g]])then d=d+x;else d=l[h];end;break end while 2303==(e)/((834466/(0x232-339)))do local D;local n;local t;local e;o[l[b]]=f[l[w]];d=d+a;l=r[d];o[l[b]]=o[l[u]][l[B]];d=d+a;l=r[d];e=l[i];t=o[l[O]];o[e+1]=t;o[e]=t[l[G]];d=d+a;l=r[d];o[l[M]]=o[l[k]];d=d+a;l=r[d];o[l[b]]=o[l[u]];d=d+a;l=r[d];e=l[C]o[e]=o[e](P(o,e+a,l[h]))d=d+a;l=r[d];e=l[_];t=o[l[w]];o[e+1]=t;o[e]=t[l[j]];d=d+a;l=r[d];e=l[U]o[e]=o[e](o[e+x])d=d+a;l=r[d];n={o,l};n[x][n[c][_]]=n[a][n[c][A]]+n[x][n[c][w]];d=d+a;l=r[d];o[l[b]]=o[l[O]]%l[B];d=d+a;l=r[d];e=l[M]o[e]=o[e](o[e+x])d=d+a;l=r[d];t=l[w];D=o[t]for e=t+1,l[j]do D=D..o[e];end;o[l[U]]=D;d=d+a;l=r[d];n={o,l};n[x][n[c][b]]=n[a][n[c][B]]+n[x][n[c][O]];d=d+a;l=r[d];o[l[i]]=o[l[h]]%l[B];break end;break;end break;end break;end while 2368==(e)/((4995-0x9dd))do e=(1888094)while n<=(-0x72+166)do e-= e e=(192510)while(0xb0-125)<n do e-= e o[l[_]][o[l[u]]]=o[l[g]];break end while 54==(e)/(((0x1a487/15)-3612))do o[l[_]]();break end;break;end while 1313==(e)/((-59+0x5d9))do e=(8316946)while(0x1bbe/134)>=n do e-= e do return end;break;end while(e)/((-31+0xf1d))==2167 do e=(5212935)while(-0x2e+100)<n do e-= e o[l[i]]=S(v[l[O]],nil,f);break end while 1729==(e)/((0x34431/71))do o[l[U]]=o[l[u]][l[B]];break end;break;end break;end break;end break;end break;end while(e)/((0x154b-2785))==471 do e=(545702)while n<=(4224/0x42)do e-= e e=(9433600)while n<=(0x22cd/151)do e-= e e=(5419295)while n<=(0x53+-26)do e-= e e=(14255550)while n>(0x1bc8/127)do e-= e f[l[k]]=o[l[C]];break end while 3950==(e)/((0x1cab-3730))do o[l[b]]=o[l[O]]%l[s];break end;break;end while(e)/(((0x24bb-4757)-0x91f))==2345 do e=(9943725)while(0x1c8c/126)<n do e-= e o[l[_]]=#o[l[w]];break end while 2805==(e)/((7184-0xe37))do do return end;break end;break;end break;end while 3520==(e)/((5411-0xaab))do e=(3056440)while n<=(0xc2-133)do e-= e e=(10488644)while(0xe4-168)<n do e-= e o[l[C]]=o[l[u]];break end while(e)/((115391/0x1d))==2636 do local e=l[i]o[e](o[e+x])break end;break;end while 1720==(e)/((-46+0x71f))do e=(7435800)while n<=(0xb9-123)do e-= e o[l[_]]=o[l[O]]-o[l[j]];break;end while 4050==(e)/((3766-0x78a))do e=(404790)while n>(0x6f+(-0xa20/54))do e-= e if(o[l[_]]==o[l[g]])then d=d+x;else d=l[t];end;break end while(e)/((1596-0x32a))==515 do local d=l[t];local e=o[d]for l=d+1,l[A]do e=e..o[l];end;o[l[b]]=e;break end;break;end break;end break;end break;end while 281==(e)/((19420/0xa))do e=(3683748)while n<=(-0x79+190)do e-= e e=(477999)while(0xc1-127)>=n do e-= e e=(7542668)while n>(0x348f/207)do e-= e f[l[t]]=o[l[b]];break end while(e)/((5788-0xb82))==2654 do o[l[i]]=o[l[h]][o[l[j]]];break end;break;end while 519==(e)/((1968-0x417))do e=(751146)while n<=(160-0x5d)do e-= e d=l[w];break;end while 3594==(e)/((435-0xe2))do e=(1724733)while(0xf8-180)<n do e-= e local e=l[M]o[e]=o[e](P(o,e+a,l[k]))break end while 1791==(e)/((-0x1e+993))do o[l[_]]=l[t];break end;break;end break;end break;end while 1646==(e)/(((-46+0x5ab62)/166))do e=(5566707)while n<=(148+(-0x59+12))do e-= e e=(384707)while n>(-0x79+191)do e-= e o[l[b]]=o[l[k]];break end while(e)/((641-0x14a))==1237 do o[l[C]]=l[w];break end;break;end while(e)/((0x71f3d/177))==2111 do e=(10024542)while(2952/(2091/0x33))>=n do e-= e local e=l[_];local a=o[e+2];local n=o[e]+a;o[e]=n;if(a>0)then if(n<=o[e+1])then d=l[h];o[e+3]=n;end elseif(n>=o[e+1])then d=l[u];o[e+3]=n;end break;end while 3546==(e)/((5728-0xb55))do e=(1027725)while n>(229-0x9c)do e-= e o[l[_]][o[l[w]]]=o[l[s]];break end while(e)/((-122+0x2bd))==1775 do local e=l[i]o[e]=o[e](P(o,e+a,N))break end;break;end break;end break;end break;end break;end break;end d+= x end;end);end;return S(L(),{},R())()end)_msec({[(0x450b/101)]='\115\116'..(function(e)return(e and'(-103+0xcb)')or'\114\105'or'\120\58'end)((0x1ae/86)==(954/0x9f))..'\110g',[(0x62a-840)]='\108\100'..(function(e)return(e and'(309-0xd1)')or'\101\120'or'\119\111'end)((0x410/208)==(1302/0xd9))..'\112',[(-0x6d+350)]=(function(e)return(e and'(0x3e8/10)')and'\98\121'or'\100\120'end)((0x4e-73)==((0x36b0/200)-0x41))..'\116\101',[(0x1f1+-119)]='\99'..(function(e)return(e and'(176+-0x4c)')and'\90\19\157'or'\104\97'end)(((-0x4d+-31)+0x71)==(0x61-94))..'\114',[(0x2c7+-118)]='\116\97'..(function(e)return(e and'(-0x11+117)')and'\64\113'or'\98\108'end)(((152070/0xb9)/0x89)==(0x14/4))..'\101',[(517+-0x54)]=(function(e)return(e and'(4200/0x2a)')or'\115\117'or'\78\107'end)((-20+0x17)==(84-0x35))..'\98',[(0x71c-971)]='\99\111'..(function(e)return(e and'((-0x9a+40)+0xd6)')and'\110\99'or'\110\105\103\97'end)((3503/(10396/0x5c))==(93-0x3e))..'\97\116',[(742+-0x4d)]=(function(e,l)return(e and'(0x2648/98)')and'\48\159\158\188\10'or'\109\97'end)((80-0x4b)==(37-0x1f))..'\116\104',[(198891/0x93)]=(function(e,l)return((220/0x2c)==(109-0x6a)and'\48'..'\195'or e..((not'\20\95\69'and'\90'..'\180'or l)))or'\199\203\95'end),[(0x24573/149)]='\105\110'..(function(e,l)return(e and'(0x2134/85)')and'\90\115\138\115\15'or'\115\101'end)((0x17+-18)==(0x98+-121))..'\114\116',[(0x2a5fd/171)]='\117\110'..(function(e,l)return(e and'((0x64ef-12939)/0x81)')or'\112\97'or'\20\38\154'end)((1175/0xeb)==(0x45c/36))..'\99\107',[(1236+-0x32)]='\115\101'..(function(e)return(e and'(235-0x87)')and'\110\112\99\104'or'\108\101'end)((-96+0x65)==(0x83+-100))..'\99\116',[(0x529+-76)]='\116\111\110'..(function(e,l)return(e and'(8200/0x52)')and'\117\109\98'or'\100\97\120\122'end)((0x1b3/87)==(-0x6a+111))..'\101\114'},{[(150-0x67)]=((getfenv))},((getfenv))()) end)()
+
+end)
+
+GhoulHub.Name = "GhoulHub"
+GhoulHub.Parent = Main
+GhoulHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GhoulHub.Position = UDim2.new(0.640886784, 0, 0.53061223, 0)
+GhoulHub.Size = UDim2.new(0, 150, 0, 32)
+GhoulHub.Font = Enum.Font.SciFi
+GhoulHub.Text = "GhoulHub"
+GhoulHub.TextColor3 = Color3.fromRGB(0, 0, 0)
+GhoulHub.TextSize = 14.000
+GhoulHub.MouseButton1Down:connect(function()
+	if game.PlaceId ~= 2202352383 then
+		return
+	end
+	_, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
+
+
+	,nil,nil;(function() _msec=(function(n,e,l)local H=e[(36+-#{",";",",1;{};(function()return#{('pBoFhH'):find("\111")}>0 and 1 or 0 end),{}})];local P=l[n[(-#{94,97,",";1,'nil','}'}+627)]][n[(-#'Negro'+(-0x31+789))]];local x=(-#{'nil';1;",";",",66;'nil'}+10)/(0xa4/(5822/(0x3cbd/219)))local r=(-50+(10140/(0x1f5-306)))-(138/0x8a)local I=l[n[(-28+(-#[[fatee is gay 0nly on top]]+(0x5c84/124)))]][n[(0xaf14/166)]];local v=(29-(129-(-#'moonsec got deobfuscated'+(-0x7f+252))))+(0x50+-78)local s=l[n[(-#[[MoonsecV2 deobfuscator 2020 free 100 percent]]+(3075/0x5))]][n[(0x6dd-913)]]local a=(108-0x6a)-(90+(((-0x1473+-100)+-#"negus")/60))local p=((-#'sussy'+((-85-(-#{110,57;(function()return{','}end)();{};{},57,'nil'}+26))+0x1c))+0x53)local h=(0x18e/(((-27061+0x34c5)/112)+0x140))local m=(((230-(((-0x5b+-33)+525)-0xe8))+-#[[Impulse youtube real]])-39)local b=((0x7d+((-0x1f00/(20352/0x9f))+-45))+-#'Fucking Retarted')local c=(-#{(function()return#{('HFOLMK'):find("\79")}>0 and 1 or 0 end);{};1}+5)local k=((100+-#{{};67,'nil';'}'})/48)local M=(-#'ÑÑÑÑÑÑÑ'+(125+(-0xb6-((-0x1474/((-0x1e+163)+-#"FranzJPresents"))+-#'0nly 1337 smashed ur wap'))))local O=(-#{1;1;'nil'}+7)local S=(66-(0x49a/((-#[[testpsx dupe no scam legit 2022 free no virus]]+(16952/0x68))-0x63)))local B=(((0x1ac7-(0xb5d10/214))/0x2d)-0x47)local N=(((-2019253/(320-0xb5))/199)+0x4d)local j=(568/(0xba6/(3927/((252+-0x3c)+-#"false"))))local t=(0x4d+((93+(-0xd3+88))+-44))local w=((-60+(((-0x35+(812-0x1d4))-200)+-#[[waste of sperm]]))+-#'impulse is hot')local f=((-#'when the he went where when he where where when the he when ther wher he then here went'+(23232/(-#"i bought a boost for this string"+(20349/(138+-#{1;(function()return#{('BBpOoO'):find("\112")}>0 and 1 or 0 end),(function()return#{('BBpOoO'):find("\112")}>0 and 1 or 0 end);{};42})))))-0x66)local u=(-#"real roblox omg builderman caught playing real"+(((0x16bbf/((0xe74a/191)+-#'Luraph v13 has been released changed absolutely fucking nothing'))-202)-0x7e))local _=(69-((0x9d0e6/(-0x19+82))/0xab))local g=(0x19-((370-(0xda7a/238))+-113))local C=n[((-0x24+1357)+-#"panzerfaust")];local W=l[n[((0xca+-41)+-#[[legend says i was here]])]][n[(521+-0x4b)]];local A=l[(function(e)return type(e):sub(1,1)..'\101\116'end)('^:+$$&.!')..'\109\101'..('\116\97'or'=,,=#_/%')..n[(-118+0x2b1)]];local V=l[n[(1210-0x27f)]][n[(126898/0x86)]];local L=(8+-#{{};25,1,",",1,'nil'})-((((-0x9c+29)+943)/0x88)+-#'nerd')local F=(168/(-#[[if true then return your dad]]+(24192/(0x102+-42))))-(-#"impulse is hot"+(113-0x61))local q=l[n[(-#"free pornhub premium"+(954/0x6))]][n[(((-#'I hate black people'+(-123+0x11334))/0xb2)+-#"nate higger nuck figgers and nill kiggers")]];local e=function(n,e)return n..e end local R=(-0x45+73)*((-26+(-0x33+(0xa71/27)))+-#'Impulse youtube ez')local Z=l[n[((0x97d-1232)+-#'if syn then haxor alert end')]];local d=(93+-0x5b)*(((0x99bd-((19783+-0x30)+-#"Only a to Z 0 to 9 is allowed"))+-67)/0x99)local E=((0x888-((217140/0xbc)+-#"elbicho"))+-#[[Lana Rhoades]])*(((-0x62+((-60+0x160)+-#[[brawl stars hard gay porn shelly nsked minecraft gay porn roblox rule34 hot]]))+-#[[psx dupe is abd]])-0x66)local D=(-#"Obfuscated By Obamas Left Nut"+(((36160/0x50)-0xf8)-123))local y=((((174058-0x15409)+-#"Daddy fuck me")/0xb6)/0xef)*((104-0x4b)+-#"if syn then haxor alert end")local z=l[n[(0x48d+-106)]]or l[n[(-#"MoonsecV2 deobfuscator 2020 free 100 percent"+(107625/0xaf))]][n[(0x48d+-106)]];local i=((((-#[[mf stfu]]+(154483/0xcb))-398)+-88)+-#"impulse 2022")local n=l[n[(-0x76+1335)]];local V=(function(d)local i,l=1,0x10 local n={j={},v={}}local o=-a local e=l+r while true do n[d:sub(e,(function()e=i+e return e-r end)())]=(function()o=o+a return o end)()if o==(R-a)then o=""l=L break end end local o=#d while e<o+r do n.v[l]=d:sub(e,(function()e=i+e return e-r end)())l=l+a if l%x==L then l=F V(n.j,(q((n[n.v[F]]*R)+n[n.v[a]])))end end return s(n.j)end)("..:::MoonSec::..!*%&/+^,;.:_#$}=%=+=}#,./&.}%!:$&:!;_;/}$,^.$:,:!=.}&!:}:/^_=!,$!:$:;+*$::%$_./;$$_!.&*.:^&&!;#*/}$,&_}^;%*%&&_+/%#=:;+;$.^/=#^$*^.;&$_^+!;#!!;+*%.=;*}*^&$.++!,^;=!,=%;:}&_#;_./_}%+==;;;!,=}#;/:$,^/&/},,=!*.=*,:$&=#*/=}&./.!*::,&/!^:*%_#%=.;%!=.#,.*,_+///.==,,!/.*,%=+,$}_,+=^^^:}^+}&%.$=/,_.&::%^&#^^%_$+*_%/%#.+^}&_*^:=.;#*%:+;#/=$;^+=%#,,*=:;:=!/_#$+:},#!^^}=,=!$:,%/_}&$$_+:+**/.$%:_,:_&%#_+!!#!;.%*=:#,:*^.#:=,.=:;,*/!+;/$}^+$$^.}_,*#;,!$^/_,:$!+,}/,*/_=:;^*!.,&;+!}!^^=&;!/+}=^$},&#$;^+$&,:!%;=*#}#.}%;#&+*}*=;;/**.};:=+/$$%+=}##*,_!!;**_:.&!_;,+;%=_;;*+=+./&!../;##+$$},#*!,/*%_!&=._%_}/^!=.,},/&$#!/$$:_%+$}/,.}_./*^__&/#}%^,=!&.!*$%*:^&^_#+*$_+.};,,$#&;_./^$&:*+*$}/#!#.+%!.#!__^++$,:$;$*^:&&!!!:_/:##;+;,!_.;%+==:!&&#,/=},,+=*,=!*/%#*/}$__^+:=.;&!_.,%._%&^$*&/#:+&$=.+_&&;#++%/*$+^$_/,+*;.#%#_}$#^*}},_+_=;./*/::*!#_/#+_!*;:*,:/,$%&_*/#*^=:,=!#..^}%,_/&$::+^},,+.*&&:;&+#%_=&$$#^:};,%!^.;}+:,/!#_*:}:^^!./}%*;/=.;:%^$,&==}*$:*%}___=&^#}+:}=,.=_;;*//!$!+,}/,*/}=,,.*}.,&*&,$$^^=&;!++==;;*;._$&+_};,+/+=_;_%!:/&:++$$^:=,$^,:!+.&%#.=$#+=}#,.^=!^;#*!:^&^#,+^}!^!+^%!:%%=_#:#&}#;+&};^$=;.!*$:&&$_%}:,%==;#^}}:.#%$,=&/^==/;*!}$$.,*.__*^$++_}+.,.,*$::&,*:_^/*$=^,=,/+&&&/_./^$&:.+_}$,_=+;=**:!,.+=}%^==#$&;.*%.}!*:=&:$&++}&/;:,%+_%&=!$_$/:_;,^=%;;*_,#%%_#&=$/+:=/;^.=%._^/&*,#%+}^%!$.**}:_,_%$_&+*#$+#=:,;*%=__}/,$/^*&^}!^.=.,#_,&##.+^&^$+,*$$,:*&:&%&#%$$^+=%,=+.!;./*;_.^*^;},,/!*=+,#*+.:&+_//:$#+__%,;**.}%,*%}!+}}_,;^.!+;+##:%&.,&/;#}^#=/;!!^:*%}&&$;^%}=,#,,=_.:}$/&#:+,}/}.^}}},.**.},!+.$.^^=&}*,$!&+^%_:^&!#&+,}/^$!%/_:#&=#&+!$$#*+;=!,#**._*$::&^$^=^,.!^.&^^*^:#%#:,/^}!,*}$;,#&&._#/.$^_=/!_!&*_}&$_.%}_*%;+$,^==;#*.=$,+==,+*,^}=/;*!}$}.,%,:,*^$*+%$!!#.!*$::.}%+_}/&$}+$=&;+!//##//^$&^!+.$=^;=;;^%!:}&#_^+^}%#:;$*^:&&!!,_$/^$%$$_=!_.;%+!:./*%;#!$+%#+/&!/,*!+&:=*,*=:^#=,^%=&^=$=^:$.^&}!^/$&+:$}*^#.+&#=!=:}/}#./%__&,#^&+_%//,.%=:}&&_,%#:^&*.#%}^;}&.=**.,*:+.*+;,!$.!_#*!..%^_&_!%}##+_%+!+;}*_:;.#%&_#/*&,!,;&*!.$,#*#_/&$#,/}$.,.=,;&==:$&+#+/*$/+=&;*::*%}__.:&:#=+}=!^}/;%$_!&$#::^%/_^%^:%&%:$*}.#%^+!^$=&;!!$$$.!%;::/;#!+^/&!.;=*#:..}&,#//$:/%^_&#%:/%__;/+/+#,/$$$,+!:/!_^&:#,+/+;$&+$=!;/**.:!+;$$.^^=!,$!:=;./*:%.$&+;}+,%/*=_,$*=,:&._=/.^:!!;*!}._,*%&_;&}#,/}#.^;!%.&!=:.}/+:$}^_=;#,;*!&:+==_+/+#&+%!}*!./%*:}.%&,#,/$}%^#}:,.!;&&#!/:$,^/&$}&,%_;%=_%&=##:#+_}+^^}},$!#,_&^_,^=,*=+;%!===.**,_+&*#!+}$#,^%+%&:_&;#+.;/}$}+#}_&&:+%$_:/,*#$!+#}!;*.;%#:=&##..$/;}/+!}=;.*:.:%*_!&%^#=%,=!#==.;%%:$*=:*%./%!&;}*_:;:/&++%}#^.=^;&+;*%.,*;_%/!#,/=#:,/!*.&=#.:&;#,!!,^=:;,*/=*.:*##*&:$/&^=*,%=!%;_!&$#:::/,}!,!=!}^_*&%_=/#%$$;+#},,/==..=._,&&#.+#/&!^;=*#:.::%#_$/%:,!!;/**.}^$%,:./_:++_}_^.=;&/:$&:#,+^!=^}=_;;*^:%%=_#+_!+^&=!,$+!.,%/_*&}#_+;}+,%==;#*.:^&&#!/$$_^,=/;*!}._&:_+/%$!+#=.,^!&.!%=::&,#++*=%^_=;;+&;.=%#_:/^$#^!}},:**./%+}!&_#;++}_^==$;.*:$+&!_$/:}*^/=%,}!_$$%+_%&=#$+.}^,&!%__*::;&/#*/}$_^;!,:.!=.$%.__/&$!+$=#,,!/.%*}}^&;#++%=*^#=.;;*&$#%$_:/,=/^*}},$!;.,%%#*&#$_+^}&,/=$#_*,:/&*_}/_$;^,=%;&!#..%^_&/!#$+_},,/!*.!*_:;&+#%+!$#^:=^;/*!.$%:_,//$*+=}_,;!+.%%*:#&.#^+_}!^$=:+%*/:*%}__/;$+$%%==!!..^%&_!&$#:/,%&,+!%;_*;:+;+!;,=!}:&=&;!!$.:=^_,/*#}+_/_#_&^%/%!:.&^#&:%&,_!*=$=*,.}%__;:;%,:&*;._*%!_%#:$&:#,_;&,.**;.!*#.}%/,_%&;.=}**,$!:.,&^}=&}#}+;}$,%==;#*.#!&&#&/$$$^,=+;**/##%;_;/%$^+#}:,^!&.!%*$#&,#/+*}+^_=.;+%/$$%#_#/^$_^!}$,:!,:}%*_*&_#_++}&^==#..*^:^&!_=/:$,^/!&_;!_._%+_/&=##+.=;,&!!.**::_&/#*/}}$^;=+;,!=.}%._^/&$!+$}:,$!/.**}:_&;$,+%$=,&=.;;*&:!%$_}/,$/^^}}.;!;.^%%:=,&#.+=}&,/=$;:*,_^/$_}++$;^#=%,=!#_.%^_&/:#$^/},,,!*:}*_:;/!#%/=$#^}=^;&*!.$&,_,/#$*+}}_,;!+.%%$:#/*#^+&}!^$=:;,*=:*&#__/:$+;%}=,#*/.^%}_!/&#:+,}/,*!.;_*::+&/_=/#$.^^=};!*;.:%:_/^*#}+_=&,+!$;=*$:.&^#&+!},^:=.;/*&.}%__;/+$^+==+,.*!.&%!:$&:$!+/}/^}=$;;&+:%%=_=/.$=^&=*,$!}#%%/_^&}$;+;}^,%**#:*.:_&&#;/$$:^,=/#:!}:!%;_^/%$&+#}.;^!&./*$:#&,#/+*$}_!=;;+*%:!%#_./^$^^!}$,:!,.^%*:}&_,^++}%^==#;.*^:&&!$}/=$,^/=*$}/=#_+/$%+:##+.}^;+&:;$*#:,&+#*/}$_,:%=;%*%.#%:_^/&$!^=%;,,!;.*%!:_&;#++;=;^#=};^*&:!%}_:/_$/^*=.,_!;.+%/:=&##.+^}},!=$;:*,:/&*_}/_}&^+=%,=!=..%^_&/!$;+:},,/!%;}*_:;&+#}/=}!^.=;;&**.$&!$://$*+}!%,;!^.%%!:#&$=;+&}!^$**;,*+:*&/$}/;$+^%!^,#!:.^%/_!/*=#+,}/,**+;_*.:+&;}%/#$:^^!:;!!}.:%,_//+!!+_};,+*.;=*$:.&^!$+!}*^:=.;/*/.}%_!%/+$,+=}=,.!;.&%^$!&:#_+/=;^}=#;;*::%&&}}/.$^^&!,,$!_.,%/=_&}#=+;},,%!%;#*.=!&&#+/$$$^,=^;**/_#%;_./%},+#}:,^!;.!%*$#&,#/+*=^^_=.;+*%$&%#_$/^$&^!}$,:!,_*%*_%&_#.++}%^==#..*^:,&!_=/:$,^/=*#&!_.;%+_&&=##+.};,/!!;$*::,&/#*/}}%^;=+;%!=_#%._^/&$*+$}:,,!/.**}:_&;#++%$=^#=.;^*&:!%$_:/,$/^*}},_!;.+%%_%&##.+^}&,!=$;:*,:/&*_}/_$;^+=%,=!#._%^_&/!#$+:},,/!*;=*_:;&+#%/=$#^.=^");local s=(-#{1,1;66;66;199;(function()return{','}end)();199}+122)local l=46 local o=a;local n={}n={[((0x3b5/73)+-#'cilertedcool')]=function()local e,r,n,a=I(V,o,o+v);o=o+y;l=(l+(s*y))%i;return(((a+l-(s)+d*(y*x))%d)*((x*E)^x))+(((n+l-(s*x)+d*(x^v))%i)*(d*i))+(((r+l-(s*v)+E)%i)*d)+((e+l-(s*y)+E)%i);end,[(-0x5e+96)]=function(e,e,e)local e=I(V,o,o);o=o+r;l=(l+(s))%i;return((e+l-(s)+E)%d);end,[(-#[[Fucking Retarted]]+(0x4c-57))]=function()local n,e=I(V,o,o+x);l=(l+(s*x))%i;o=o+x;return(((e+l-(s)+d*(x*y))%d)*i)+((n+l-(s*x)+i*(x^v))%d);end,[(-0x2d+49)]=function(l,e,n)if n then local e=(l/x^(e-a))%x^((n-r)-(e-a)+r);return e-e%a;else local e=x^(e-r);return(l%(e+e)>=e)and a or F;end;end,[(115-0x6e)]=function()local l=n[(61-0x3c)]();local e=n[(117-0x74)]();local c=a;local o=(n[(-#'Obfuscated By Obamas Left Nut'+(0x56+-53))](e,r,R+y)*(x^(R*x)))+l;local l=n[(0x72+-110)](e,21,31);local e=((-a)^n[(131+-0x7f)](e,32));if(l==F)then if(o==L)then return e*F;else l=r;c=L;end;elseif(l==(d*(x^v))-r)then return(o==F)and(e*(r/L))or(e*(F/L));end;return P(e,l-((i*(y))-a))*(c+(o/(x^D)));end,[(-0x44+74)]=function(e,x,x)local x;if(not e)then e=n[(-70+0x47)]();if(e==F)then return'';end;end;x=W(V,o,o+e-a);o=o+e;local e=''for n=r,#x do e=C(e,q((I(W(x,n,n))+l)%i))l=(l+s)%d end return e;end}local function E(...)return{...},Z('#',...)end local function V()local h={};local c={};local e={};local f={h,c,nil,e};local l={}local w=(-#{(function()return{','}end)(),85;'nil'}+18)local e={[(105-0x68)]=(function(e)return not(#e==n[((8112/0xa9)+-#"real roblox omg builderman caught playing real")]())end),[(0x3b+-59)]=(function(e)return n[(405/0x51)]()end),[(0xdb/73)]=(function(e)return n[((109+(-#'impulse 2022'+(-3600/0x50)))+-#'real roblox omg builderman caught playing real')]()end),[(85-0x51)]=(function(e)local l=n[(103-0x61)]()local n=''local e=1 for o=1,#l do e=(e+w)%i n=C(n,q((I(l:sub(o,o))+e)%d))end return n end)};local o=n[(-#[[Fucking Retarted]]+(114-0x61))]()for o=1,o do local n=n[(-121+0x7b)]();local d;local e=e[n%(0xa9-((0x2bca/59)+-#[[da hood money generator 2022 working free no virus]]))];l[o]=e and e({});end;for d=1,n[(0xbb/187)]()do local e=n[(-50+0x34)]();if(n[(64-0x3c)](e,a,r)==L)then local c=n[(-#"alivephoneluaLMAO"+(57+-0x24))](e,x,v);local o=n[((0x89-110)+-#'how do i get moonsex v3')](e,y,x+y);local e={n[(52+(-11270/0xe6))](),n[((-0x14+67)+-0x2c)](),nil,nil};local i={[(34-0x22)]=function()e[_]=n[(276/0x5c)]();e[O]=n[((755+-0x56)/223)]();end,[(42-0x29)]=function()e[g]=n[(177/0xb1)]();end,[(0x47+-69)]=function()e[_]=n[(0x6c/108)]()-(x^R)end,[(((194-0x8d)+-#"if syn then haxor alert end")-0x17)]=function()e[t]=n[((-0x67+((216+-0x58)+-#[[freerobuxphone]]))+-#'send nudes')]()-(x^R)e[S]=n[(27+-0x18)]();end};i[c]();if(n[((73+-0x30)+-#[[impulse reel pastebin]])](o,r,a)==r)then e[p]=l[e[b]]end if(n[(116-0x70)](o,x,x)==a)then e[u]=l[e[g]]end if(n[(280/(0x8a+-68))](o,v,v)==r)then e[O]=l[e[B]]end h[d]=e;end end;f[3]=n[(0x6c+-106)]();for e=r,n[(-#'how to find my dad at the dollar store getting milk'+(176-0x7c))]()do c[e-r]=V();end;return f;end;local function F(n,y,s)local L=n[x];local i=n[v];local o=n[a];return(function(...)local l={};local q={};local d=Z('#',...)-r;local n=i;local i=o;local V={...};local o=a;local R=L;local v=-r;local I=E local L={};for e=0,d do if(e>=n)then q[e-n]=V[e+r];else l[e]=V[e+a];end;end;local n=d-n+a local n;local d;while true do n=i[o];d=n[(-#'0nly segc'+(0x14/(-#'Only a to Z 0 to 9 is allowed'+(0x9c-125))))];e=(3700827)while d<=(-0x5c+128)do e=-e e=(342907)while d<=(-#[[Faggot]]+((342-0xbb)-0x84))do e=-e e=(1001322)while d<=(-#'keno 0347 is a nerdy fag'+(-0x6d+(-#'if syn then haxor alert end'+(0x196-238))))do e=-e e=(3842164)while d<=(-34+0x25)do e=-e e=(124564)while((280-0xba)+-#"MSC 793z487nhvcgsdfgsudfza9889jgvz56gz56z547684z5g54z948g56z74j56475jzg645z6456 oh wait bitch")>=d do e=-e e=(89621)while d>(-#'alivephoneluaLMAO'+((0x659a/170)-0x88))do e=-e local e=n[k];local o=l[n[f]];l[e+1]=o;l[e]=o[n[N]];break end while(e)/((-#[[made by kim jong un]]+((-#'If no milk then return ffather'+(-0xf-40))+0x99)))==1829 do local r;local d;local e;l[n[k]]=n[w];o=o+a;n=i[o];l[n[b]]=n[g];o=o+a;n=i[o];l[n[m]]=#l[n[_]];o=o+a;n=i[o];l[n[m]]=n[u];o=o+a;n=i[o];e=n[h];d=l[e]r=l[e+2];if(r>0)then if(d>l[e+1])then o=n[t];else l[e+3]=d;end elseif(d<l[e+1])then o=n[g];else l[e+3]=d;end break end;break;end while 1639==(e)/((185-0x6d))do e=(1381450)while d>(50-0x30)do e=-e l[n[p]]=#l[n[t]];break end while 3947==(e)/((34650/0x63))do s[n[_]]=l[n[b]];break end;break;end break;end while(e)/(((((3959-0x7cc)+-#"Gay porn")-990)+-#"arab porn"))==4019 do e=(5143004)while(-#[[Fucking losed 027728272728271]]+(124+-0x5a))>=d do e=-e e=(3808781)while d>(900/0xe1)do e=-e local e={l,n};e[r][e[x][p]]=e[a][e[x][j]]+e[r][e[x][t]];break end while 1789==(e)/((0x10ef-2206))do local e=n[c];local d=l[e]local a=l[e+2];if(a>0)then if(d>l[e+1])then o=n[u];else l[e+3]=d;end elseif(d<l[e+1])then o=n[t];else l[e+3]=d;end break end;break;end while(e)/((0x83872/194))==1852 do e=(11356864)while(510/0x55)>=d do e=-e l[n[p]]=F(R[n[f]],nil,s);break;end while(e)/((0x1abe-3482))==3376 do e=(835392)while(0x36+-47)<d do e=-e do return end;break end while 228==(e)/((0xe82+-50))do l[n[m]]();break end;break;end break;end break;end break;end while 2649==(e)/((-#"how do i get moonsex v3"+(0x182e7/247)))do e=(3922842)while d<=(-#[[send nudes]]+(136-0x72))do e=-e e=(8642970)while((0x61-72)+-#"howtodumpscript")>=d do e=-e e=(4631100)while(-0x43+76)<d do e=-e l[n[c]][l[n[w]]]=l[n[S]];break end while(e)/(((0xaa9-1423)+-#[[Fucking Retarted]]))==3590 do do return l[n[m]]end break end;break;end while 2690==(e)/((0x1987-3322))do e=(2224780)while d>(77-0x42)do e=-e local e=n[h]l[e](l[e+r])break end while(e)/((-#"elbicho"+(0xdb7-(0xe07-1817))))==1286 do l[n[h]]=l[n[u]];break end;break;end break;end while(e)/(((53932-0x6966)/25))==3639 do e=(1154068)while(-105+(15232/0x80))>=d do e=-e e=(2048730)while d>(-#[[brawl stars hard gay porn shelly nsked minecraft gay porn roblox rule34 hot]]+(-0x3c+148))do e=-e l[n[c]]=l[n[f]][n[M]];break end while(e)/((-0x31+(1481+-0x16)))==1453 do local e=n[c]l[e]=l[e](l[e+r])break end;break;end while(e)/((-#[[if syn request then print your mom then end and then kill yourself]]+(31168/0x20)))==1271 do e=(3695204)while(240/0x10)>=d do e=-e local e=n[k]l[e]=l[e](z(l,e+a,n[f]))break;end while(e)/(((0xb9d-1538)+-#"heil eco mother fuckers"))==2617 do e=(2899156)while d>(-59+0x4b)do e=-e l[n[b]]=#l[n[t]];break end while 878==(e)/((-#"papier der afghaner wurde von nice dem bombenleger gefickt"+(0xd7a+-90)))do do return l[n[m]]end break end;break;end break;end break;end break;end break;end while(e)/((116641/0x85))==391 do e=(803698)while(77-0x33)>=d do e=-e e=(4185210)while(133-0x70)>=d do e=-e e=(6888179)while d<=(86-0x43)do e=-e e=(68448)while d>((5476/0x94)+-#[[how to join the kkk]])do e=-e if(l[n[c]]==n[M])then o=o+r;else o=n[f];end;break end while 1104==(e)/((-0x1b+89))do local e=n[c]local o,n=I(l[e](z(l,e+1,n[_])))v=n+e-1 local n=0;for e=e,v do n=n+a;l[e]=o[n];end;break end;break;end while(e)/(((158808/0x27)+-111))==1739 do e=(12757094)while d>(200/(0x59-79))do e=-e l[n[b]]=s[n[u]];break end while 3374==(e)/((-#"papier ist ein kleiner schwanz lutscher"+(7742-0xf52)))do local e=n[b]l[e]=l[e](z(l,e+a,n[f]))break end;break;end break;end while(e)/((-#[[windows xp startup sfx]]+(0x27564/87)))==2287 do e=(687436)while d<=(41+-0x12)do e=-e e=(831142)while d>(143-0x79)do e=-e local o=n[w];local e=l[o]for n=o+1,n[j]do e=e..l[n];end;l[n[k]]=e;break end while 2459==(e)/((358+-0x14))do local x=R[n[u]];local a;local e={};a=A({},{__index=function(l,n)local e=e[n];return e[1][e[2]];end,__newindex=function(o,l,n)local e=e[l]e[1][e[2]]=n;end;});for d=1,n[B]do o=o+r;local n=i[o];if n[(0x45-68)]==11 then e[d-1]={l,n[t]};else e[d-1]={y,n[u]};end;L[#L+1]=e;end;l[n[c]]=F(x,a,s);break end;break;end while(e)/((7802-0xf64))==178 do e=(8006283)while((((0x1e6232/233)+-#"bigchungus")/0xc2)+-#[[33 cocks in my mouth]])>=d do e=-e local e=n[c]l[e]=l[e](z(l,e+a,v))break;end while(e)/((0x15bd6/34))==3057 do e=(4625922)while d>(0x79-96)do e=-e l[n[b]]=l[n[_]][l[n[B]]];break end while 1327==(e)/((-0x18+3510))do local a=R[n[t]];local d;local e={};d=A({},{__index=function(l,n)local e=e[n];return e[1][e[2]];end,__newindex=function(o,l,n)local e=e[l]e[1][e[2]]=n;end;});for d=1,n[M]do o=o+r;local n=i[o];if n[(-#"mike litoris"+(121-0x6c))]==11 then e[d-1]={l,n[_]};else e[d-1]={y,n[t]};end;L[#L+1]=e;end;l[n[k]]=F(a,d,s);break end;break;end break;end break;end break;end while(e)/((0x8ffc4/204))==278 do e=(3721488)while d<=((0x162c/132)+-#[[Lana Rhoades]])do e=-e e=(2415690)while(-#'mama mo'+(0x215c/244))>=d do e=-e e=(7049762)while d>((6156/(0x1a9-254))+-#[[arab porn]])do e=-e local v;local d;local y;local e;l[n[k]]=s[n[t]];o=o+a;n=i[o];l[n[h]]=l[n[f]][n[j]];o=o+a;n=i[o];e=n[b];y=l[n[t]];l[e+1]=y;l[e]=y[n[B]];o=o+a;n=i[o];l[n[m]]=l[n[_]];o=o+a;n=i[o];l[n[k]]=l[n[g]];o=o+a;n=i[o];e=n[b]l[e]=l[e](z(l,e+a,n[f]))o=o+a;n=i[o];e=n[c];y=l[n[t]];l[e+1]=y;l[e]=y[n[O]];o=o+a;n=i[o];e=n[p]l[e]=l[e](l[e+r])o=o+a;n=i[o];d={l,n};d[r][d[x][m]]=d[a][d[x][O]]+d[r][d[x][g]];o=o+a;n=i[o];l[n[p]]=l[n[_]]%n[j];o=o+a;n=i[o];e=n[c]l[e]=l[e](l[e+r])o=o+a;n=i[o];y=n[u];v=l[y]for e=y+1,n[B]do v=v..l[e];end;l[n[c]]=v;o=o+a;n=i[o];d={l,n};d[r][d[x][p]]=d[a][d[x][O]]+d[r][d[x][w]];o=o+a;n=i[o];l[n[p]]=l[n[u]]%n[M];break end while(e)/((-34+0x704))==4001 do l[n[b]]=l[n[u]]%n[N];break end;break;end while(e)/((-120+0x32a))==3501 do e=(3343275)while d<=((0xd6-165)+-#'go kys go kys go kys')do e=-e l[n[b]]=(n[t]~=0);break;end while 1053==(e)/((6446-0xcc7))do e=(413136)while(0x21c/18)<d do e=-e local o=n[p];local e=l[n[g]];l[o+1]=e;l[o]=e[n[S]];break end while(e)/((-#[[free pornhub premium]]+(-33+0x584)))==304 do y[n[_]]=l[n[h]];break end;break;end break;end break;end while 984==(e)/((0x87bb2/147))do e=(7025760)while(185-0x98)>=d do e=-e e=(14385514)while d>(6432/0xc9)do e=-e if(l[n[m]]~=l[n[M]])then o=o+r;else o=n[f];end;break end while(e)/((679458/0xba))==3938 do l[n[c]]=y[n[w]];o=o+a;n=i[o];l[n[h]]=#l[n[t]];o=o+a;n=i[o];y[n[_]]=l[n[k]];o=o+a;n=i[o];l[n[b]]=y[n[f]];o=o+a;n=i[o];l[n[m]]=#l[n[g]];o=o+a;n=i[o];y[n[t]]=l[n[b]];o=o+a;n=i[o];do return end;break end;break;end while(e)/((4153-0x841))==3444 do e=(13685850)while(((-78+0x12)+-#"psx dupe is abd")+0x6d)>=d do e=-e l[n[m]]={};break;end while(e)/((0x69861/113))==3578 do e=(531258)while(4410/0x7e)<d do e=-e y[n[_]]=l[n[c]];break end while 294==(e)/((-#'elbicho'+(0xe55-1855)))do if(l[n[h]]==l[n[B]])then o=o+r;else o=n[g];end;break end;break;end break;end break;end break;end break;end break;end while(e)/((0x77b+-82))==2019 do e=(7528278)while d<=((0x157-230)+-#[[papier der afghaner wurde von nice dem bombenleger gefickt]])do e=-e e=(5186050)while d<=((250-0x93)+-#[[papier der afghaner wurde von nice dem bombenleger gefickt]])do e=-e e=(7568656)while d<=(-#"keno 0347 is a nerdy fag"+(1856/0x1d))do e=-e e=(2233347)while d<=(4408/0x74)do e=-e e=(6869816)while d>((17612/0x11)/0x1c)do e=-e if(l[n[c]]==n[M])then o=o+r;else o=n[_];end;break end while 1912==(e)/((546136/0x98))do local e=n[k];local a=l[e+2];local d=l[e]+a;l[e]=d;if(a>0)then if(d<=l[e+1])then o=n[w];l[e+3]=d;end elseif(d>=l[e+1])then o=n[u];l[e+3]=d;end break end;break;end while(e)/((-0x75+840))==3089 do e=(9745494)while(((-#[[made by kim jong un]]+(-0x4d+80))+0x42)+-#'monkey mode')<d do e=-e local o=n[w];local e=l[o]for n=o+1,n[O]do e=e..l[n];end;l[n[p]]=e;break end while(e)/((0xa4dc4/206))==2973 do local d;local x,u;local r;local e;s[n[g]]=l[n[c]];o=o+a;n=i[o];l[n[c]]=s[n[w]];o=o+a;n=i[o];l[n[c]]=s[n[f]];o=o+a;n=i[o];e=n[m];r=l[n[t]];l[e+1]=r;l[e]=r[n[O]];o=o+a;n=i[o];l[n[h]]=n[w];o=o+a;n=i[o];e=n[h]x,u=I(l[e](z(l,e+1,n[_])))v=u+e-1 d=0;for e=e,v do d=d+a;l[e]=x[d];end;o=o+a;n=i[o];e=n[m]l[e]=l[e](z(l,e+a,v))o=o+a;n=i[o];l[n[b]]();o=o+a;n=i[o];do return end;break end;break;end break;end while 3013==(e)/((22608/(1125/0x7d)))do e=(969361)while d<=(0x2052/197)do e=-e e=(11601450)while(0x7e+-85)<d do e=-e l[n[h]]=l[n[_]][n[j]];break end while 3150==(e)/((((0x51+-96)+-#'Fucking Retarted')+0xe82))do local e={l,n};e[r][e[x][b]]=e[a][e[x][N]]+e[r][e[x][_]];break end;break;end while 313==(e)/((0xc32+-25))do e=(4124779)while d<=(((-0x5c+250)-0x62)+-#"i fucked your dad")do e=-e local e=n[b];local a=l[e+2];local d=l[e]+a;l[e]=d;if(a>0)then if(d<=l[e+1])then o=n[w];l[e+3]=d;end elseif(d>=l[e+1])then o=n[t];l[e+3]=d;end break;end while(e)/((0xe93+-58))==1123 do e=(3697360)while d>(-#'sex in fortnite real'+(0x94-84))do e=-e local e=n[h];local d=l[e]local a=l[e+2];if(a>0)then if(d>l[e+1])then o=n[_];else l[e+3]=d;end elseif(d<l[e+1])then o=n[g];else l[e+3]=d;end break end while 3272==(e)/((2322-0x4a8))do if l[n[k]]then o=o+a;else o=n[f];end;break end;break;end break;end break;end break;end while 2650==(e)/((189829/0x61))do e=(603152)while d<=(0x1194/90)do e=-e e=(776552)while(-57+0x68)>=d do e=-e e=(1523484)while(0xd9-171)<d do e=-e s[n[u]]=l[n[k]];o=o+a;n=i[o];l[n[h]]={};o=o+a;n=i[o];l[n[c]]={};o=o+a;n=i[o];s[n[g]]=l[n[m]];o=o+a;n=i[o];l[n[h]]=s[n[g]];o=o+a;n=i[o];if(l[n[m]]==n[j])then o=o+r;else o=n[t];end;break end while(e)/(((3437-0x6cc)+-#[[this is a meme string]]))==909 do l[n[b]]=F(R[n[u]],nil,s);break end;break;end while(e)/((5576-0xb10))==283 do e=(8232315)while(336/0x7)>=d do e=-e l[n[k]]=y[n[u]];break;end while 3423==(e)/(((4873-0x991)+-#"Deeznutsbutinlualoo"))do e=(1687753)while d>(135+-0x56)do e=-e o=n[w];break end while 2633==(e)/((-#[[goofy ahh uncle productions]]+(1368-0x2bc)))do if l[n[h]]then o=o+a;else o=n[f];end;break end;break;end break;end break;end while(e)/((0x163+-102))==2384 do e=(1303695)while(0x6b+-55)>=d do e=-e e=(7668144)while((-0x79+296)-0x7c)<d do e=-e l[n[h]]=(n[f]~=0);o=o+r;break end while 3399==(e)/(((-0x67+2373)+-#'freerobuxphone'))do l[n[p]]=l[n[f]]-l[n[M]];break end;break;end while(e)/(((-#"impulse is hot"+(2739-0x58c))+-90))==1073 do e=(1714734)while(689/0xd)>=d do e=-e l[n[h]]=l[n[w]][l[n[O]]];break;end while 1317==(e)/((-#"i love minors"+(2713-0x576)))do e=(4092750)while d>((135-0x4c)+-#[[false]])do e=-e l[n[c]]=l[n[_]];break end while(e)/(((-44+0x792)+-#'brawl stars hard gay porn shelly nsked minecraft gay porn roblox rule34 hot'))==2250 do l[n[h]]=(n[_]~=0);break end;break;end break;end break;end break;end break;end while(e)/(((0x7f4/1)+-#"kys nigga"))==3714 do e=(13775802)while d<=(7424/0x74)do e=-e e=(1616456)while(-0x5a+149)>=d do e=-e e=(1054044)while(159+-0x66)>=d do e=-e e=(4030692)while(-#'big niggers sucking cock'+(279-0xc7))<d do e=-e o=n[u];break end while 1754==(e)/((4723-0x979))do s[n[u]]=l[n[k]];break end;break;end while(e)/((0xedc15/255))==276 do e=(1702800)while(((-16+0x34a5)+-#"Bwomp")/232)<d do e=-e local e=n[h]l[e]=l[e](l[e+r])break end while 2064==(e)/((0x6d1-920))do l[n[b]]=n[w];break end;break;end break;end while 3182==(e)/((0x44a-590))do e=(298400)while(-0x1f+92)>=d do e=-e e=(2604534)while d>(7020/0x75)do e=-e if(l[n[m]]==l[n[B]])then o=o+r;else o=n[g];end;break end while(e)/((179571/0x77))==1726 do l[n[b]]=n[f];break end;break;end while(e)/(((-0x6c+513)+-#[[negus]]))==746 do e=(1606725)while d<=(233-0xab)do e=-e l[n[p]]=s[n[t]];break;end while(e)/((0x744+-123))==925 do e=(3508848)while(150-0x57)<d do e=-e l[n[p]]=l[n[g]]%n[j];break end while 2124==(e)/((-42+0x69e))do local e=n[k]l[e](l[e+r])break end;break;end break;end break;end break;end while(e)/(((0x44dc0/(-0x37+133))+-#'windows xp startup sfx'))==3833 do e=(562740)while(174-0x69)>=d do e=-e e=(597432)while d<=(0x2628/148)do e=-e e=(9774575)while d>(0x659/(-#[[when the he went where when he where where when the he when ther wher he then here went]]+(14336/0x80)))do e=-e l[n[b]]={};break end while(e)/(((-60+0xaee)+-#"Big black men"))==3587 do l[n[h]]=y[n[u]];break end;break;end while 341==(e)/((-107+0x743))do e=(5062876)while d<=(231-0xa4)do e=-e l[n[k]]=(n[t]~=0);o=o+r;break;end while(e)/((400036/0x9d))==1987 do e=(1092547)while(222-0x9a)<d do e=-e do return end;break end while(e)/(((-192+0x4c)+0x27f))==2089 do if(l[n[c]]~=l[n[j]])then o=o+r;else o=n[_];end;break end;break;end break;end break;end while 249==(e)/(((-#"Fucking losed 027728272728271"+(9229-0x1231))-2283))do e=(3082995)while(128+-0x39)>=d do e=-e e=(8065910)while(0x85+(-9513/0x97))<d do e=-e local e=n[c]local o,n=I(l[e](z(l,e+1,n[u])))v=n+e-1 local n=0;for e=e,v do n=n+a;l[e]=o[n];end;break end while(e)/((-#[[sex in fortnite real]]+(4578-0x918)))==3617 do local e=n[c]l[e]=l[e](z(l,e+a,v))break end;break;end while(e)/((3384-0x6b1))==1845 do e=(1801959)while d<=(134+-0x3e)do e=-e l[n[p]]();break;end while 591==(e)/(((0x1853-3148)+-#[[testing this thingy lololollez]]))do e=(346096)while d>(5694/0x4e)do e=-e l[n[h]]=l[n[w]]-l[n[N]];break end while 3568==(e)/((20952/0xd8))do l[n[h]][l[n[w]]]=l[n[N]];break end;break;end break;end break;end break;end break;end break;end o=o+a;end;end);end;return F(V(),{},H())()end)_msec({[(0xc5+-58)]='\115\116'..(function(e)return(e and'(-#[[this is a meme string]]+(0xbb+-66))')or'\114\105'or'\120\58'end)((-#"real roblox omg builderman caught playing real"+(166-0x73))==(0x2c4/118))..'\110g',[(-#'Negro'+(-0x31+789))]='\108\100'..(function(e)return(e and'(-#"testpsx dupe no scam legit 2022 free no virus"+(0x628e/174))')or'\101\120'or'\119\111'end)(((-0x6d+129)+-#'howtodumpscript')==(((202-0x83)+-0x15)+-#"i shoved a whole bag of jellibeans up my ass"))..'\112',[(0xaf14/166)]=(function(e)return(e and'(248-0x94)')and'\98\121'or'\100\120'end)((-20+0x19)==(0x4a+-69))..'\116\101',[(((-#'I hate black people'+(-123+0x11334))/0xb2)+-#"nate higger nuck figgers and nill kiggers")]='\99'..(function(e)return(e and'((30275/0xad)+-#[[brawl stars hard gay porn shelly nsked minecraft gay porn roblox rule34 hot]])')and'\90\19\157'or'\104\97'end)((0x7e-121)==(0x5e+-91))..'\114',[(0x2af+-116)]='\116\97'..(function(e)return(e and'(0x6144/249)')and'\64\113'or'\98\108'end)((96-0x5a)==(((0x944-1211)/0x81)+-#"yeet"))..'\101',[(521+-0x4b)]=(function(e)return(e and'(0x4e20/200)')or'\115\117'or'\78\107'end)((80+-0x4d)==(0x6c+(-0x57+10)))..'\98',[(0x6dd-913)]='\99\111'..(function(e)return(e and'(-#[[impulse was here pastebin reel]]+(0x4614/138))')and'\110\99'or'\110\105\103\97'end)((0x71-82)==(-0x79+152))..'\97\116',[(0x2df+-114)]=(function(e,n)return(e and'(0xd4+-112)')and'\48\159\158\188\10'or'\109\97'end)((-#'Me be like at 5am in the morning'+(0xc7-162))==(0xde/37))..'\116\104',[(1381+-0x47)]=(function(e,n)return((-#'anime is for fags'+(5148/0xea))==(-#"dies of cringe"+((154+-0x21)-0x68))and'\48'..'\195'or e..((not'\20\95\69'and'\90'..'\180'or n)))or'\199\203\95'end),[(126898/0x86)]='\105\110'..(function(e,n)return(e and'(0xff-155)')and'\90\115\138\115\15'or'\115\101'end)((132-0x7f)==(-0x47+102))..'\114\116',[(0x48d+-106)]='\117\110'..(function(e,n)return(e and'(-#[[W4rboy was here]]+(189+-0x4a))')or'\112\97'or'\20\38\154'end)(((575/0x17)+-#[[Cock and ball tortue]])==(-0x5d+124))..'\99\107',[((0x97d-1232)+-#'if syn then haxor alert end')]='\115\101'..(function(e)return(e and'(0x44c/11)')and'\110\112\99\104'or'\108\101'end)(((0x2f+-37)+-#"Negro")==(3658/((-0x52+266)+-#"if syn request then print your mom then end and then kill yourself")))..'\99\116',[(-0x76+1335)]='\116\111\110'..(function(e,n)return(e and'(-70+0xaa)')and'\117\109\98'or'\100\97\120\122'end)((89-0x54)==(-#[[testing this thingy lololollez]]+(-0x2a+77)))..'\101\114'},{[((0x7a+-77)+-#[[W4rboy was here]])]=((getfenv)or(function()return(_ENV)end))},((getfenv)or(function()return(_ENV)end))()) end)()
+
+end)
+
+GoofyStack.Name = "Goofy Stack"
+GoofyStack.Parent = Main
+GoofyStack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GoofyStack.Position = UDim2.new(0.326086968, 0, 0.360544205, 0)
+GoofyStack.Size = UDim2.new(0, 150, 0, 32)
+GoofyStack.Font = Enum.Font.SciFi
+GoofyStack.Text = "Goofy Stack"
+GoofyStack.TextColor3 = Color3.fromRGB(0, 0, 0)
+GoofyStack.TextSize = 14.000
+GoofyStack.MouseButton1Down:connect(function()
+	local playerlist = {};
+	for i,v in pairs(game.Players:GetPlayers())do
+		table.insert(playerlist,v.Name)
+	end
+
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+	local Main = Library.CreateLib("SPTC:Re | EXO", "Ocean")
+	local T1 = Main:NewTab("Main")
+	local S1 = T1:NewSection("Fun")
+	S1:NewKeybind("Turn ON/OFF GUI", "why are you reading this", Enum.KeyCode.RightControl, function()
+		Library:ToggleUI()
+	end)
+
+	local PlayerChosen;
+	local drop = S1:NewDropdown("Player", "Other script users aren't in here", playerlist, function(new)
+		PlayerChosen = new;
+	end)
+
+	game.Players.PlayerAdded:Connect(function(player)
+		local name = player.Name
+		table.insert(playerlist,name)
+		drop:Refresh(playerlist)
+	end)
+
+	game.Players.PlayerRemoving:Connect(function(player)
+		local name = player.Name
+		for i,v in pairs(playerlist)do
+			if v == name then  
+				table.remove(playerlist,i)
+			end
+		end
+	end)
+
+	S1:NewToggle("Spam all", "Info", function(state)
+		tgo = state
+		while tgo do
+			task.wait()
+			pcall (function()
+				local Random = game.Players:GetPlayers()[math.random(1,#game.Players:GetPlayers())]
+				if Random.PrivateStats.BodyToughness.Value <= game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value * 2 then
+					if Random.Character.Humanoid.Health ~= 0 then
+						if not Random.Character:FindFirstChild("SafeZoneShield") then 
+							local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+							local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+							local x2 = Random.Character.HumanoidRootPart.Position.x
+							local y = Random.Character.HumanoidRootPart.Position.y
+							local z2 = Random.Character.HumanoidRootPart.Position.z
+							local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+							game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+							for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+								if v.Name == "EnergySphere9" then
+									v.CFrame = CFrame.new(x2, y, z2)
+								end 
+							end
+						end
+					end
+				end
+			end)
+		end
+	end)
+
+	S1:NewToggle("Spam", "Info", function(state)
+		da = state
+		while da do
+			task.wait()
+			pcall (function()
+				if game.Players:FindFirstChild(PlayerChosen).Character.Humanoid.Health ~= 0 then
+					if not game.Players:FindFirstChild(PlayerChosen).Character:FindFirstChild("SafeZoneShield") then 
+						local x = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+						local z = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+
+						local x2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.x
+						local y = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.y
+						local z2 = game.Players:FindFirstChild(PlayerChosen).Character.HumanoidRootPart.Position.z
+						local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x, 10000, z)}}
+						game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+						for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+							if v.Name == "EnergySphere9" then
+								v.CFrame = CFrame.new(x2, y, z2)
+							end 
+						end
+					end
+				end
+			end)
+		end
+	end)
+end)
+
+CoreysNewGUI.Name = "CoreysNewGUI"
+CoreysNewGUI.Parent = Main
+CoreysNewGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CoreysNewGUI.Position = UDim2.new(0.32490164, 0, 0.679022133, 0)
+CoreysNewGUI.Size = UDim2.new(0, 150, 0, 32)
+CoreysNewGUI.Font = Enum.Font.SciFi
+CoreysNewGUI.Text = "CoreysNewGUI"
+CoreysNewGUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+CoreysNewGUI.TextSize = 14.000
+CoreysNewGUI.MouseButton1Down:connect(function()
+	if game.PlaceId ~= 2202352383 then
+		return
+	end
+	while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
+		not game:GetService("Players").LocalPlayer.PlayerGui do
+		wait()
+	end
+
+	wait(7.5)
+	game.Lighting.Blur.Enabled = false
+	game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+	game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Whitelist/main/NewGui", true))() 
+end)
+
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Close.Position = UDim2.new(0.881202221, 0, 0, 0)
+Close.Size = UDim2.new(0, 63, 0, 50)
+Close.Font = Enum.Font.SciFi
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 14.000
+Close.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+
+AntiChatLogs.Name = "AntiChatLogs"
+AntiChatLogs.Parent = Main
+AntiChatLogs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AntiChatLogs.Position = UDim2.new(0.326087028, 0, 0.833321273, 0)
+AntiChatLogs.Size = UDim2.new(0, 149, 0, 32)
+AntiChatLogs.Font = Enum.Font.SciFi
+AntiChatLogs.Text = "AntiChatLogs"
+AntiChatLogs.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiChatLogs.TextSize = 14.000
+AntiChatLogs.MouseButton1Down:connect(function()
+	print("Loaded No Chat Logs")
+
+	repeat
+		wait()
+	until game:IsLoaded()
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+
+	mt.__namecall = newcclosure(function(self, ...)
+
+		local args = {...}
+		local method = getnamecallmethod()
+
+		if method == "Fire" and self.Name == "MessagePosted" then
+			return wait(9e9)
+		end
+
+		return old(self, ...)
+
+	end)
+
+
+	local CloneFunction = clonefunction
+	local CheckCaller = CloneFunction(checkcaller)
+	local HookFunction = CloneFunction(hookfunction)
+	local LocalPlayer = game.Players.PlayerAdded:wait()
+
+	local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+	getgenv().MessageEvent = Instance.new("BindableEvent")
+
+	local OldFunctionHook
+	local PostMessageHook = function(self, msg)
+		if not CheckCaller() and self == PostMessage then
+			MessageEvent:Fire(msg)
+			return
+		end
+		return OldFunctionHook(self, msg)
+	end
+	OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+end)
+
+DeathLogs.Name = "DeathLogs"
+DeathLogs.Parent = Main
+DeathLogs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DeathLogs.Position = UDim2.new(0.640886784, 0, 0.679022133, 0)
+DeathLogs.Size = UDim2.new(0, 150, 0, 32)
+DeathLogs.Font = Enum.Font.SciFi
+DeathLogs.Text = "DeathLogs"
+DeathLogs.TextColor3 = Color3.fromRGB(0, 0, 0)
+DeathLogs.TextSize = 14.000
+if game.PlaceId == 2202352383 then
+	game:GetService('Players').PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			character:WaitForChild("Humanoid").Died:Connect(function()
+				game.StarterGui:SetCore( 
+					"ChatMakeSystemMessage",  { 
+						Text = player.Name .. " has died!💀",
+						Color = Color3.fromRGB(255, 0, 0), 
+						Font = Enum.Font.Arial, 
+						FontSize = Enum.FontSize.Size24 
+					} 
+				)
+			end)
+		end)
+	end)
+end
+
+RepGive.Name = "RepGive"
+RepGive.Parent = Main
+RepGive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RepGive.Position = UDim2.new(0.0144927502, 0, 0.679022133, 0)
+RepGive.Size = UDim2.new(0, 150, 0, 32)
+RepGive.Font = Enum.Font.SciFi
+RepGive.Text = "RepGive"
+RepGive.TextColor3 = Color3.fromRGB(0, 0, 0)
+RepGive.TextSize = 14.000
+RepGive.MouseButton1Down:connect(function()
+	--[[
+
+
+ ▄▄▄▄    ▄▄▄      ▓█████▄  ██▒   █▓ ██▓ ▄▄▄▄   ▓█████   ██████ 
+▓█████▄ ▒████▄    ▒██▀ ██▌▓██░   █▒▓██▒▓█████▄ ▓█   ▀ ▒██    ▒ 
+▒██▒ ▄██▒██  ▀█▄  ░██   █▌ ▓██  █▒░▒██▒▒██▒ ▄██▒███   ░ ▓██▄   
+▒██░█▀  ░██▄▄▄▄██ ░▓█▄   ▌  ▒██ █░░░██░▒██░█▀  ▒▓█  ▄   ▒   ██▒
+░▓█  ▀█▓ ▓█   ▓██▒░▒████▓    ▒▀█░  ░██░░▓█  ▀█▓░▒████▒▒██████▒▒
+░▒▓███▀▒ ▒▒   ▓▒█░ ▒▒▓  ▒    ░ ▐░  ░▓  ░▒▓███▀▒░░ ▒░ ░▒ ▒▓▒ ▒ ░
+▒░▒   ░   ▒   ▒▒ ░ ░ ▒  ▒    ░ ░░   ▒ ░▒░▒   ░  ░ ░  ░░ ░▒  ░ ░
+ ░    ░   ░   ▒    ░ ░  ░      ░░   ▒ ░ ░    ░    ░   ░  ░  ░  
+ ░            ░  ░   ░          ░   ░   ░         ░  ░      ░  
+      ░            ░           ░             ░                 
+
+]]--
+
+	local Zackrepmenu = Instance.new("ScreenGui")
+	local Guiframe = Instance.new("Frame")
+	local text = Instance.new("TextLabel")
+	local giverep = Instance.new("TextButton")
+	local stop = Instance.new("TextButton")
+	local closegui = Instance.new("TextButton")
+	local TextBox = Instance.new("TextBox")
+	local TextButton = Instance.new("TextButton")
+
+	Zackrepmenu.Parent = game.CoreGui
+
+	Guiframe.Name = "Guiframe"
+	Guiframe.Parent = Zackrepmenu
+	Guiframe.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Guiframe.Position = UDim2.new(0.0438328236, 0, 0.617107928, 0)
+	Guiframe.Visible = false
+	Guiframe.Size = UDim2.new(0, 214, 0, 90)
+	Guiframe.Active = true
+	Guiframe.Draggable = true
+
+	TextBox.Parent = Guiframe
+	TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Position = UDim2.new(0.191588789, 0, 0.288888901, 0)
+	TextBox.Size = UDim2.new(0, 132, 0, 18)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextBox.TextSize = 14.000
+
+	text.Name = "text"
+	text.Parent = Guiframe
+	text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	text.Size = UDim2.new(0, 214, 0, 20)
+	text.Font = Enum.Font.Arial
+	text.Text = "Zack's Give Rep"
+	text.TextColor3 = Color3.fromRGB(0, 0, 0)
+	text.TextSize = 14.000
+
+	giverep.Name = "giverep"
+	giverep.Parent = Guiframe
+	giverep.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
+	giverep.Position = UDim2.new(0.0280373823, 0, 0.555555582, 0)
+	giverep.Size = UDim2.new(0, 92, 0, 31)
+	giverep.Font = Enum.Font.Fantasy
+	giverep.Text = "Give rep"
+	giverep.TextColor3 = Color3.fromRGB(0, 0, 0)
+	giverep.TextSize = 14.000
+	giverep.MouseButton1Down:connect(function()
+		local selecteduser = TextBox.Text
+		_G.zackrepfarm = true
+
+		function Loopgoto()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[selecteduser].Character.HumanoidRootPart.CFrame
+		end
+
+		function LoopRespawn()
+			game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+		end
+
+		function LoopAttack()
+			local args = {
+				[1] = {
+					[1] = "Skill_SoulAttack_Start",
+					[2] = game:GetService("Players")[selecteduser]
+				}
+			}
+
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+			local args = { [1] = { [1] = "Skill_SoulAttack_End" } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+		end
+
+		function RemoveFF()
+			if game.Players.LocalPlayer.Character:FindFirstChild('ForceField')
+			then game.Players.LocalPlayer.Character.ForceField:Destroy()
+			end
+		end
+
+		while _G.zackrepfarm == true do task.wait()
+			pcall(RemoveFF)
+			pcall(Loopgoto)
+			LoopRespawn()
+			LoopAttack()
+		end
+	end)
+
+	stop.Name = "stop"
+	stop.Parent = Guiframe
+	stop.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
+	stop.Position = UDim2.new(0.532710314, 0, 0.555555582, 0)
+	stop.Size = UDim2.new(0, 93, 0, 31)
+	stop.Font = Enum.Font.Fantasy
+	stop.Text = "Stop"
+	stop.TextColor3 = Color3.fromRGB(0, 0, 0)
+	stop.TextSize = 14.000
+	stop.MouseButton1Down:connect(function()
+		_G.zackrepfarm = false
+		_G.RemoveFF = false
+	end)
+
+	closegui.Name = "closegui"
+	closegui.Parent = Guiframe
+	closegui.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+	closegui.Position = UDim2.new(0.883177578, 0, 0, 0)
+	closegui.Size = UDim2.new(0, 25, 0, 20)
+	closegui.Font = Enum.Font.SourceSans
+	closegui.Text = "X"
+	closegui.TextColor3 = Color3.fromRGB(0, 0, 0)
+	closegui.TextScaled = true
+	closegui.TextSize = 14.000
+	closegui.TextWrapped = true
+	closegui.MouseButton1Down:connect(function()
+		Guiframe.Visible = false
+	end)
+
+	TextButton.Parent = Zackrepmenu
+	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.Position = UDim2.new(-1.86264515e-09, 0, 0.399999976, 0)
+	TextButton.Size = UDim2.new(0, 76, 0, 21)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = "Open"
+	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.TextSize = 14.000
+	TextButton.MouseButton1Down:connect(function()
+		Guiframe.Visible = true
+	end)
+end)
+
+PoleTP.Name = "PoleTP"
+PoleTP.Parent = Main
+PoleTP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PoleTP.Position = UDim2.new(0.640886784, 0, 0.830965579, 0)
+PoleTP.Size = UDim2.new(0, 150, 0, 32)
+PoleTP.Font = Enum.Font.SciFi
+PoleTP.Text = "PoleTP"
+PoleTP.TextColor3 = Color3.fromRGB(0, 0, 0)
+PoleTP.TextSize = 14.000
+PoleTP.MouseButton1Down:connect(function()
+	Workspace.Gravity = 0
+	_G.tp = true
+	while _G.tp == true do
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(326, 270, 829)
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(358, 270, 844)
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(358, 270, 877)
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(328, 270, 860)
+	end
+end)
+
+UltiGui.Name = "UltiGui"
+UltiGui.Parent = Main
+UltiGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UltiGui.Position = UDim2.new(0.0144927502, 0, 0.827432036, 0)
+UltiGui.Size = UDim2.new(0, 150, 0, 32)
+UltiGui.Font = Enum.Font.SciFi
+UltiGui.Text = "UltiGui"
+UltiGui.TextColor3 = Color3.fromRGB(0, 0, 0)
+UltiGui.TextSize = 14.000
+UltiGui.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Snyxis/SXhub2/main/Sxhubb', true))()
+end)
+
+OpenGUI.Name = "OpenGUI"
+OpenGUI.Parent = ScreenGui
+OpenGUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenGUI.Position = UDim2.new(0, 0, 0.746070147, 0)
+OpenGUI.Size = UDim2.new(0, 200, 0, 50)
+OpenGUI.Font = Enum.Font.SciFi
+OpenGUI.Text = "Open"
+OpenGUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenGUI.TextSize = 20.000
+OpenGUI.TextWrapped = true
+
+-- Scripts:
+
+local function TEZF_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(TEZF_fake_script)()
+local function IGGQXKF_fake_script() -- OpenGUI.LocalScript 
+	local script = Instance.new('LocalScript', OpenGUI)
+
+	local frame = script.Parent.Parent.Main
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+	
+end
+coroutine.wrap(IGGQXKF_fake_script)()
